@@ -1,0 +1,20 @@
+.statement-large {
+  font-family: $font-primary;
+  font-size: 1.5em;
+  line-height: 1.4;
+  text-align: center;
+
+  @include breakpoint($bulma) {
+    font-size: 2.5em;
+  }
+}
+
+.add-emphasis {
+  text-decoration: underline;
+}
+
+.statement.hero {
+  &.is-fullheight {
+    min-height: calc(100vh - 75px -6rem);
+  }
+}

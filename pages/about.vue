@@ -1,11 +1,14 @@
 <template>
-  <div class="index">
-    <section class="statement">
-      <div class="container">
-        <div class="font-text">
-          <h1>About</h1>
-          <p>Edison bulb wolf humblebrag, chambray skateboard tbh shoreditch four loko unicorn semiotics. Hammock banh mi chillwave, brunch before they sold out roof party fixie prism ramps blog. Ramps yr four dollar toast hammock street art swag lyft, meggings schlitz chicharrones offal vegan selvage normcore. Hot chicken distillery keytar, ennui adaptogen heirloom ramps viral kombucha. Cardigan 8-bit.</p>
-          <nuxt-link to="/"><button class="next slide">Next up: home</button></nuxt-link>
+  <div class="index about">
+    <section class="statement hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="statement-large">
+            <span class="st-1">Gobiernos, organizaciones y ciudades tienen problemas: obesidad, <span class="add-emphasis">violencia</span>, movilidad y más. </span>
+            <span class="st-2">Ellos han tratado de solucionarlos de distintas maneras. Y no han podido. </span>
+            <span class="st-3"><a>Nosotros</a> creemos que la solución está en el aprendizaje cultural colectivo. </span>
+            <nuxt-link to="/how">¿Cómo lo hacemos?</nuxt-link>
+          </div>
         </div>
       </div>
     </section>
@@ -19,40 +22,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.statement {
-  margin-top: 40px;
-}
-
-
-.hero.is-primary {
-  background: transparent;
-}
-
-.page-enter-active {
-  animation: acrossIn .15s ease-out both;
-} 
-
-.page-leave-active {
-  animation: acrossOut .25s ease-in both;
-} 
-
-@keyframes acrossIn {
-  0% {
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes acrossOut {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(100%, 0, 0);
-  }
-}
 
 </style>
