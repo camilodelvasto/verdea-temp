@@ -18,6 +18,10 @@
 <style scoped lang="scss">
 
 .logo-type {
+  width: 150px;
+  height: 75px;
+  display: flex;
+
   svg {
     width: 150px;
 
