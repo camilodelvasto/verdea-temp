@@ -33,7 +33,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: false,
   /*
   ** Build configuration
   */
@@ -52,6 +52,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      /* Allow global scss */
       config.module.rules.forEach((rule) => {
         if (isVueRule(rule)) {
           rule.options.loaders.sass.push(sassResourcesLoader)

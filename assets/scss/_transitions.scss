@@ -1,0 +1,48 @@
+/* page */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+/* bounce */
+.bounce-enter-active {
+  animation: bounceIn .5s;
+}
+.bounce-leave-active {
+  animation: bounceOut .3s;
+}
+
+/* across */
+.across-enter,
+.across-leave-active {
+  animation: acrossIn 0.5s;
+}
+
+.across-enter,
+.across-leave-active {
+  animation: acrossOut 0.5s;
+}
+
+/* Animations */
+@keyframes bounceIn {
+  0% { transform: scale(0.9) }
+  50% { transform: scale(1.03) }
+  100% { transform: scale(1) }
+}
+@keyframes bounceOut {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.03) }
+  100% { transform: scale(0.9); opacity: 0.1 }
+}
+
+@keyframes acrossIn {
+  0% { transform: translate3d(-100%, 0, 0) }
+  100% { transform: translate3d(0, 0, 0) }
+}
+
+@keyframes acrossOut {
+  0% { transform: translate3d(0, 0, 0) }
+  100% { transform: translate3d(100%, 0, 0) }
+}

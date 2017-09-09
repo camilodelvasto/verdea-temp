@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  transition: 'fadeOpacity'
+  transition: 'across'
 }
 </script>
 
