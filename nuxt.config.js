@@ -28,8 +28,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Laboratorio de aprendizaje colectivo' },
       { hid: 'og:title', property: 'og:title', content: 'Laboratorio de aprendizaje colectivo' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Ironista Site' },
-      { hid: 'og:description', property: 'og:description', content: 'More descriptive text for twitter' }
+      { hid: 'og:description', property: 'og:description', content: 'More descriptive text for twitter' },
     ],
+    script: [
+      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Ironista", "url" : "https://ironista.com/", "logo" : "https://ironista.com/_nuxt/img/dabbawala.32c935c.jpg" }', type: 'application/ld+json' }
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
