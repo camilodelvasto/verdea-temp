@@ -31,7 +31,9 @@ export default {
       meta: [
         { hid: 'description', name: 'description', content: 'Ironista is about being ironic' },
         { hid: 'og-title', property: 'og-title', content: 'Ironista is about being crazy twitter-ironic' },
+        { hid: 'og-type', property: 'og-type', content: 'website' },
         { hid: 'og-image', property: 'og-image', content: this.prodBaseUrl + socialImage },
+        { hid: 'og-url', property: 'og-url', content: this.prodBaseUrl + '/about/' },
         { hid: 'og-site_name', property: 'og-site_name', content: 'Ironista Site' },
         { hid: 'og-description', property: 'og-description', content: 'More descriptive text for twitter' }
       ]
