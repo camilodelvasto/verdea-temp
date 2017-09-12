@@ -20,15 +20,24 @@ import socialImage from '~/assets/img/dabbawala.jpg'
 
 export default {
   transition: 'bounce',
-  head: {
-    title: 'This is the about page',
-    meta: [
-      { hid: 'description', name: 'description', content: 'Ironista is about being ironic' },
-      { hid: 'og-title', property: 'og-title', content: 'Ironista is about being crazy twitter-ironic' },
-      { hid: 'og-image', property: 'og-image', content: socialImage },
-      { hid: 'og-site_name', property: 'og-site_name', content: 'Ironista Site' },
-      { hid: 'og-description', property: 'og-description', content: 'More descriptive text for twitter' }
-    ]
+  head () {
+    return {
+      title: 'This is the about page',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Ironista is about being ironic' },
+        { hid: 'og-title', property: 'og-title', content: 'Ironista is about being crazy twitter-ironic' },
+        { hid: 'og-image', property: 'og-image', content: this.prodBaseUrl + socialImage },
+        { hid: 'og-site_name', property: 'og-site_name', content: 'Ironista Site' },
+        { hid: 'og-description', property: 'og-description', content: 'More descriptive text for twitter' }
+      ]
+    }
+  },
+  created: function () {
+    if (process.env.NODE_ENV === 'production') {
+      this.prodBaseUrl = 'https://ironista.com'
+    } else {
+      this.prodBaseUrl = process.env.baseUrl
+    }
   }
 }
 </script>

@@ -34,6 +34,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    baseUrl: 'http://localhost:3000'
+  },
   /*
   ** Customize the progress-bar color
   */
