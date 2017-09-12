@@ -21,10 +21,14 @@ module.exports = {
   */
   head: {
     title: 'ironista',
+    titleTemplate: '%s - Ironista.com',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Laboratorio de aprendizaje colectivo' }
+      { hid: 'description', name: 'description', content: 'Laboratorio de aprendizaje colectivo' },
+      { hid: 'og-title', property: 'og-title', content: 'Laboratorio de aprendizaje colectivo' },
+      { hid: 'og-site_name', property: 'og-site_name', content: 'Ironista Site' },
+      { hid: 'og-description', property: 'og-description', content: 'More descriptive text for twitter' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

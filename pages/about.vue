@@ -16,8 +16,20 @@
 </template>
 
 <script>
+import socialImage from '~/assets/img/dabbawala.jpg'
+
 export default {
-  transition: 'bounce'
+  transition: 'bounce',
+  head: {
+    title: 'This is the about page',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Ironista is about being ironic' },
+      { hid: 'og-title', property: 'og-title', content: 'Ironista is about being crazy twitter-ironic' },
+      { hid: 'og-image', property: 'og-image', content: socialImage },
+      { hid: 'og-site_name', property: 'og-site_name', content: 'Ironista Site' },
+      { hid: 'og-description', property: 'og-description', content: 'More descriptive text for twitter' }
+    ]
+  }
 }
 </script>
 
