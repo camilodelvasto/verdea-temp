@@ -20,6 +20,11 @@ import socialImage from '~/assets/img/dabbawala.jpg'
 
 export default {
   transition: 'bounce',
+  data () {
+    return {
+      prodBaseUrl: ''
+    }
+  },
   head () {
     return {
       title: 'This is the about page',
