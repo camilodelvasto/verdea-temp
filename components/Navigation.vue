@@ -42,6 +42,9 @@
 <style scoped lang="scss">
 .navbar-burger {
   transform: translate(10px,13px);
+  position: fixed;
+  top: 0;
+  right: 15px;
 
   @include breakpoint($bulma) {
     display: block;
@@ -128,6 +131,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      bottom: 0;
     }
   }
 

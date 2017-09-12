@@ -14,8 +14,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc8",
-    "buefy": "^0.5.1"
+    "buefy": "^0.5.1",
+    "gsap": "^1.20.2",
+    "nuxt": "^1.0.0-rc8"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
