@@ -25,13 +25,13 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Laboratorio de aprendizaje colectivo' },
-      { hid: 'og:title', property: 'og:title', content: 'Laboratorio de aprendizaje colectivo' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Ironista Site' },
-      { hid: 'og:description', property: 'og:description', content: 'More descriptive text for twitter' },
+      { hid: 'description', name: 'description', content: 'Aprendizaje Colectivo' },
+      { hid: 'og:title', property: 'og:title', content: 'Aprendizaje Colectivo' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Ironista' },
+      { hid: 'og:description', property: 'og:description', content: 'Ironista: Aprendizaje Colectivo' },
     ],
     script: [
-      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Ironista", "url" : "https://ironista.com/", "logo" : "https://ironista.com/_nuxt/img/dabbawala.32c935c.jpg" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Ironista", "url" : "https://ironista.com/", "logo" : "" }', type: 'application/ld+json' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [

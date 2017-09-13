@@ -7,11 +7,11 @@
         <div class="container">
           <div class="title-wrapper">
             <h1 class="title">
-              La cultura no se improvisa, ni se cambia de la noche a la mañana
+              {{ statement.main }}
             </h1>
           </div>
           <h2 class="subtitle">
-            Pero tampoco tiene que tomar una vida
+            {{ statement.sub }}
           </h2>
         </div>
       </div>
@@ -34,6 +34,10 @@ export default {
   transition: 'page',
   data () {
     return {
+      statement: {
+        main: 'La cultura no se improvisa, ni se cambia de la noche a la mañana',
+        sub: 'Pero tampoco tiene que tomar una vida'
+      },
       image: require('~/assets/img/dabbawala.jpg')
     }
   }
