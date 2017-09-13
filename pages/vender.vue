@@ -1,28 +1,37 @@
 <template>
   <div class="index about">
-    <section class="statement hero is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="statement-large">
-            <span class="st-1">Gobiernos, organizaciones y ciudades tienen problemas: obesidad, <span class="add-emphasis">violencia</span>, movilidad y más. </span>
-            <span class="st-2">Ellos han tratado de solucionarlos de distintas maneras. Y no han podido. </span>
-            <span class="st-3"><a>Nosotros</a> creemos que la solución está en el aprendizaje cultural colectivo. </span>
-            <nuxt-link to="/how">¿Cómo lo hacemos?</nuxt-link>
-          </div>
-        </div>
+    <Navigation />
+    <section class="page-content">
+      <div class="container">
+        <h2>{{ content.sell.title }}</h2>
+        <div class="paragraph">{{ content.sell.body }}</div>
       </div>
     </section>
   </div><!--container-->
 </template>
 
+<style scoped lang="scss">
+.paragraph {
+
+}
+
+</style>
+
 <script>
 import socialImage from '~/assets/img/dabbawala.jpg'
+import Navigation from '~/components/Navigation.vue'
 
 export default {
-  transition: 'bounce',
+  transition: 'page',
   data () {
     return {
-      prodBaseUrl: ''
+      prodBaseUrl: '',
+      content: {
+        sell: {
+          title: '¿Cómo funciona?',
+          body: 'Edison bulb wolf humblebrag, chambray skateboard tbh shoreditch four loko unicorn semiotics. Hammock banh mi chillwave, brunch before they sold out roof party fixie prism ramps blog. Ramps yr four dollar toast hammock street art swag lyft, meggings schlitz chicharrones offal vegan selvage normcore.'
+        }
+      }
     }
   },
   head () {
@@ -45,10 +54,9 @@ export default {
     } else {
       this.prodBaseUrl = process.env.baseUrl
     }
+  },
+  components: {
+    Navigation
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

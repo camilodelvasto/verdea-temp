@@ -7,6 +7,13 @@
         <div class="navbar-brand">
           <Logo />
         </div>
+        <div class="logo-alt"
+          v-on:click="showMobileMenu = !showMobileMenu"
+        >
+          <nuxt-link exact to="/">
+            <img src="http://res.cloudinary.com/startics/image/upload/v1505336399/oie_transparent_thz7me.png" width="266" height="183" alt="Camioncito">
+          </nuxt-link>
+          </div>
 
         <div id="#nav-burger-trigger" class="navbar-burger"
           v-bind:class="{ 'is-active': showMobileMenu }"
@@ -23,16 +30,9 @@
         <div class="navbar-start"
           v-on:click="showMobileMenu = false"
         >
-          <nuxt-link exact to="/" class="navbar-item">Inicio</nuxt-link>
-          <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-          <nuxt-link to="/prata" class="navbar-item">Cambio</nuxt-link>
-        </div>
-        <div class="navbar-end"
-          v-on:click="showMobileMenu = false"
-        >
-          <nuxt-link exact to="/" class="navbar-item">Acerca de</nuxt-link>
-          <nuxt-link to="/rufina" class="navbar-item">Ofertas</nuxt-link>
-          <nuxt-link to="/prata" class="navbar-item">Contacto</nuxt-link>
+          <nuxt-link exact to="/" class="navbar-item">¡Pedir ya!</nuxt-link>
+          <nuxt-link to="/como-funciona" class="navbar-item">¿Cómo funciona?</nuxt-link>
+          <nuxt-link to="/vender" class="navbar-item">Vender en Camioncito</nuxt-link>
         </div>
       </div>
     </nav>
@@ -45,11 +45,6 @@
   position: fixed;
   top: 0;
   right: 15px;
-
-  @include breakpoint($bulma) {
-    display: block;
-    transform: translate(-20px,13px);
-  }
 
   span {
     width: 25px;
@@ -67,7 +62,7 @@
 
   &.is-active {
     span {
-      background-color: $color-bg-light;
+      background-color: $color-bg-orange;
 
       &:nth-child(1) {
         margin-top: -10px;
@@ -120,28 +115,43 @@
     right: 0;
     z-index: 900;
 
+    .logo-alt {
+      display: none;
+      margin: 40px auto;
+    }
+
     @include breakpoint($bulma) {
-      display: flex;
-      flex-direction: column;
+      align-items: center;
+    }
+
+    > .container {
+      width: inherit;
     }
 
     &.expanded {
-      background-color: $color-bg-dark;
-      transition: background-color 0.2s ease-in-out;
+      background-color: $color-bg-1;
+      opacity: 1;
+      transition: background-color 0.4s ease-in-out;
+      transition: opacity 0.4s ease-in-out;
       height: 100%;
       display: flex;
       flex-direction: column;
       bottom: 0;
+
+      .navbar-brand {
+        display: none;        
+      }
+
+      .logo-alt {
+        display: block;
+        animation: appearIn 0.4s;
+      }
     }
   }
 
   .navbar-menu {
     box-shadow: none;
     flex: 1;
-
-    @include breakpoint($bulma) {
-      padding: 0 40px;
-    }
 
     a.navbar-item {
       font-family: $font-primary;
@@ -150,11 +160,16 @@
 
       @include breakpoint($sm) {
         font-size: 50px;
-        text-align: right;
+        text-align: center;
       }
 
       @include breakpoint($bulma) {
         display: block;
+        font-size: 20px;
+      }
+
+      &.nuxt-link-exact-active {
+        color: $color-emphasis;
       }
     }
 
@@ -163,11 +178,11 @@
       flex-direction: column;
 
       a.navbar-item {
-        color: $color-text-light;
+        color: $color-bg-2;
 
         &:hover {
           background-color: transparent;
-          color: $color-emphasis-alt;
+          color: $color-emphasis;
         }
       }
 
@@ -177,18 +192,16 @@
       }      
     }
 
-    @include breakpoint($bulma) {
-      display: none;
-    }
-
     .navbar-start {
       padding-top: 60px;
       display: flex;
       flex-direction: column;
 
       @include breakpoint($bulma) {
+        padding-top: 0;
         margin-right: 0;
         margin-left: auto;
+        flex-direction: row;
       }
     }
 

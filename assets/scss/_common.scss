@@ -18,3 +18,14 @@
     min-height: calc(100vh - 75px -6rem);
   }
 }
+
+.page-content {
+  text-align: left;
+  font-family: $font-primary;
+}
+
+.index {
+  > section:not(.hero) {
+    margin-top: 20px;
+  }
+}
