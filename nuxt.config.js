@@ -20,18 +20,18 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'ironista',
-    titleTemplate: '%s - Ironista.com',
+    title: 'camioncito',
+    titleTemplate: '%s - Camioncito.club',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Aprendizaje Colectivo' },
-      { hid: 'og:title', property: 'og:title', content: 'Aprendizaje Colectivo' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Ironista' },
-      { hid: 'og:description', property: 'og:description', content: 'Ironista: Aprendizaje Colectivo' },
+      { hid: 'description', name: 'description', content: 'Gourmet Food on Wheels' },
+      { hid: 'og:title', property: 'og:title', content: 'Gourmet Food on Wheels' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Camioncito' },
+      { hid: 'og:description', property: 'og:description', content: 'Camioncito: Gourmet Food on Wheels' },
     ],
     script: [
-      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Ironista", "url" : "https://ironista.com/", "logo" : "" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Camioncito", "url" : "https://camioncito.club/", "logo" : "" }', type: 'application/ld+json' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [
