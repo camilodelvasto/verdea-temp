@@ -75,7 +75,9 @@ export default {
   min-height: 45vh;
   display: flex;
   align-items: flex-end;
+  padding: 0;
 }
+
 .product-info {
   background: rgba($color-bg-dark, 0.7);
   padding-bottom: 20px;
