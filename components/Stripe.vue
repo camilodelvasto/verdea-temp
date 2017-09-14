@@ -1,5 +1,5 @@
 <template>
-  <div class="hero carousel">
+  <div class="hero stripe">
     <section class="hero is-primary is-medium">
       <div class="hero-body"
         v-bind:style="{ backgroundImage: `url(${product.img.src})` }"

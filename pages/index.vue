@@ -1,19 +1,19 @@
 <template>
   <div class="index">
     <Navigation />
-    <Carousel />
+    <Stripe />
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation.vue'
-import Carousel from '~/components/Carousel.vue'
+import Stripe from '~/components/Stripe.vue'
 
 export default {
   transition: 'page',
   components: {
     Navigation,
-    Carousel
+    Stripe
   }
 }
 </script>
