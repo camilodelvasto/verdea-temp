@@ -23,8 +23,38 @@
   </div>
 </template>
 
-<script>
+<style scoped lang="scss">
+.hero-body {
+  background-size: cover;
+  min-height: 45vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
 
+.product-info {
+  background: rgba($color-bg-dark, 0.7);
+  padding-bottom: 20px;
+  padding-top: 10px;
+  width: 100%;
+
+  .name,
+  .description,
+  .price {
+    color: $color-bg-light;
+  }
+
+  .price {
+    color: $color-emphasis;
+  }
+
+  .name {
+    margin-top: 0;
+  }
+}
+</style>
+
+<script>
 export default {
   data () {
     return {
@@ -68,35 +98,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.hero-body {
-  background-size: cover;
-  min-height: 45vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 0;
-}
-
-.product-info {
-  background: rgba($color-bg-dark, 0.7);
-  padding-bottom: 20px;
-  padding-top: 10px;
-  width: 100%;
-
-  .name,
-  .description,
-  .price {
-    color: $color-bg-light;
-  }
-
-  .price {
-    color: $color-emphasis;
-  }
-
-  .name {
-    margin-top: 0;
-  }
-
-}
-</style>
