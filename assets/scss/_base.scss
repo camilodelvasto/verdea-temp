@@ -1,23 +1,13 @@
-// Fonts
-@font-face {
-  font-family: "Glacial Indifference";
-  src: url("~/assets/fonts/GlacialIndifference-Regular.woff") format("woff"), url("~/assets/fonts/GlacialIndifference-Regular.ttf")  format("truetype");
-}
-
-$font-logo: "Glacial Indifference", serif;
-$font-primary: "Cardo", serif;
-$font-secondary: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-primary: "Lato", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+$font-logo: "Pacifico", cursive;
 
 // Colors
 $color-text: #000;
 $color-text-light: #FFFFFF;
-$color-emphasis: #FF6671; //almost red 
-$color-emphasis-alt: #FFA766; //almost orange
-$color-bg-0: #FFFFFF;
-$color-bg-1: #F4F2F0;
-$color-bg-2: #656565; //steel
+$color-emphasis: #674E7A; //purple 
+$color-emphasis-alt: #97B435; //green
 $color-bg-light: #FFFFFF; //white
-$color-bg-orange: #FFA766; //almost orange
 $color-bg-dark: #161c20; //almost black
 
 // Media breakpoints, taken from https://medium.com/developing-with-sass/refactoring-my-simple-sass-breakpoint-mixin-71205dd6badd

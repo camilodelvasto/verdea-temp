@@ -1,7 +1,9 @@
 <template>
   <div class="index">
-    <Navigation />
-    <Stripe />
+    <div class="page-wrapper">
+      <Navigation />
+      <Stripe />
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,6 @@ import Navigation from '~/components/Navigation.vue'
 import Stripe from '~/components/Stripe.vue'
 
 export default {
-  transition: 'page',
   components: {
     Navigation,
     Stripe
@@ -19,5 +20,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.index {
+  animation: appearIn 0.5s;
+}
 
 </style>

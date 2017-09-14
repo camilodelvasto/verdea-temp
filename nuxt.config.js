@@ -20,22 +20,23 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'camioncito',
-    titleTemplate: '%s - Camioncito.club',
+    title: 'verdea',
+    titleTemplate: '%s - verdea.online',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Gourmet Food on Wheels' },
-      { hid: 'og:title', property: 'og:title', content: 'Gourmet Food on Wheels' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Camioncito' },
-      { hid: 'og:description', property: 'og:description', content: 'Camioncito: Gourmet Food on Wheels' },
+      { hid: 'description', name: 'description', content: 'Flores de amor y coco' },
+      { hid: 'og:title', property: 'og:title', content: 'Flores de amor y coco' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'verdea' },
+      { hid: 'og:description', property: 'og:description', content: 'verdea: flores de amor y coco' },
     ],
     script: [
-      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "Camioncito", "url" : "https://camioncito.club/", "logo" : "" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "verdea", "url" : "https://verdea.online/", "logo" : "https://res.cloudinary.com/startics/image/upload/v1505401908/verdea-sticker_y1jitq.svg" }', type: 'application/ld+json' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat|Lato|Pacifico' }
     ]
   },
   env: {
@@ -44,7 +45,9 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: false,
+  loading: {
+    color: '#674E7A'
+  },
   /*
   ** Build configuration
   */

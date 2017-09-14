@@ -22,7 +22,6 @@ import socialImage from '~/assets/img/dabbawala.jpg'
 import Navigation from '~/components/Navigation.vue'
 
 export default {
-  transition: 'page',
   data () {
     return {
       prodBaseUrl: '',

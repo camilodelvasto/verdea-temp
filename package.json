@@ -1,7 +1,7 @@
 {
-  "name": "camioncito",
+  "name": "verdea",
   "version": "1.0.0",
-  "description": "Gourmet Food on Wheels",
+  "description": "Flores de amor y coco",
   "author": "Camilo Delvasto <camilodelvasto@gmail.com>",
   "private": true,
   "scripts": {
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "buefy": "^0.5.1",
-    "gsap": "^1.20.2",
     "nuxt": "^1.0.0-rc8"
   },
   "devDependencies": {

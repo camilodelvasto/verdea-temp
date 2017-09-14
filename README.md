@@ -1,6 +1,6 @@
-# Camioncito
+# Verdea
 
-> Gourmet Food on Wheels
+> Regala vida
 
 ## Build Setup
 
