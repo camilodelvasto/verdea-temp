@@ -17,9 +17,7 @@
 <script>
 
 export default {
-  transition: {
-    mode: 'bounce'
-  },
+  transition: 'page',
   data () {
     return {
       content: {

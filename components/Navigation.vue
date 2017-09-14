@@ -8,7 +8,7 @@
           <Logo />
         </div>
         <div class="logo-alt"
-          v-on:click="showMobileMenu = false"
+          v-on:click="closeMobileMenu()"
         >
           <nuxt-link exact to="/">
             <img src="http://res.cloudinary.com/startics/image/upload/v1505336399/oie_transparent_thz7me.png" width="266" height="183" alt="Camioncito">
@@ -17,7 +17,7 @@
 
         <div id="#nav-burger-trigger" class="navbar-burger"
           v-bind:class="{ 'is-active': showMobileMenu }"
-          v-on:click="showMobileMenu = !showMobileMenu"
+          v-on:click="toggleMobileMenu()"
         >
           <span></span>
           <span></span>
@@ -28,7 +28,7 @@
         v-bind:class="{ 'is-active': showMobileMenu }"
       >
         <div class="navbar-start"
-          v-on:click="showMobileMenu = false"
+          v-on:click="closeMobileMenu()"
         >
           <nuxt-link exact to="/" class="navbar-item">¡Pedir ya!</nuxt-link>
           <nuxt-link to="/como-funciona" class="navbar-item">¿Cómo funciona?</nuxt-link>
@@ -252,17 +252,25 @@ export default {
       showMobileMenu: false
     }
   },
-  watch: {
-    showMobileMenu: function (newVal) {
-      if (newVal) {
-        document.body.classList.add('modal-open')
+  methods: {
+    toggleMobileMenu () {
+      var vm = this
+      vm.showMobileMenu = !vm.showMobileMenu
+      if (vm.showMobileMenu) {
+        vm.openMobileMenu()
       } else {
-        document.body.classList.remove('modal-open')
+        vm.closeMobileMenu()
       }
     },
-    '$route' (to, from) {
+    closeMobileMenu () {
+      var vm = this
       document.body.classList.remove('modal-open')
-      console.log('route left')
+      vm.showMobileMenu = false
+    },
+    openMobileMenu () {
+      var vm = this
+      document.body.classList.add('modal-open')
+      vm.showMobileMenu = true
     }
   }
 }
