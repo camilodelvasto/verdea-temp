@@ -61,7 +61,7 @@ export default {
       products: [
         {
           name: 'Bubble Tea Original',
-          description: 'Delicioso te taiwanés con burbujas de tapioca, deli!',
+          description: 'Delicioso té taiwanés con burbujas de tapioca, deli!',
           price: '8.500',
           img: {
             src: 'https://res.cloudinary.com/startics/image/upload/v1505343879/tearepublic-1_tt23ro.jpg',
