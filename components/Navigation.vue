@@ -8,7 +8,7 @@
           <Logo />
         </div>
         <div class="logo-alt"
-          v-on:click="showMobileMenu = !showMobileMenu"
+          v-on:click="showMobileMenu = false"
         >
           <nuxt-link exact to="/">
             <img src="http://res.cloudinary.com/startics/image/upload/v1505336399/oie_transparent_thz7me.png" width="266" height="183" alt="Camioncito">
@@ -259,6 +259,10 @@ export default {
       } else {
         document.body.classList.remove('modal-open')
       }
+    },
+    '$route' (to, from) {
+      document.body.classList.remove('modal-open')
+      console.log('route left')
     }
   }
 }
