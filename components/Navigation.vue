@@ -11,7 +11,7 @@
           v-on:click="closeMobileMenu()"
         >
           <nuxt-link exact to="/">
-            <img src="http://res.cloudinary.com/startics/image/upload/v1505336399/oie_transparent_thz7me.png" width="266" height="183" alt="Camioncito">
+            <img src="https://res.cloudinary.com/startics/image/upload/v1505336399/oie_transparent_thz7me.png" width="266" height="183" alt="Camioncito">
           </nuxt-link>
           </div>
 
