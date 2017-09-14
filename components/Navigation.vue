@@ -28,8 +28,8 @@
         <div class="navbar-start"
           v-on:click="closeMobileMenu()"
         >
-          <nuxt-link exact to="/" class="navbar-item">Inicio</nuxt-link>
           <nuxt-link to="/regala-vida" class="navbar-item">Regala vida</nuxt-link>
+          <nuxt-link to="/sabrosura" class="navbar-item">Sabrosura</nuxt-link>
           <nuxt-link to="/nosotros" class="navbar-item">Nosotros</nuxt-link>
           <nuxt-link to="/contacto" class="navbar-item">Contacto</nuxt-link>
         </div>
@@ -171,6 +171,10 @@
     box-shadow: none;
     flex: 1;
 
+    @include breakpoint($bulma) {
+      flex-direction: row-reverse;
+    }
+
     a.navbar-item {
       font-family: $font-secondary;
       text-align: center;
@@ -184,7 +188,7 @@
 
       @include breakpoint($bulma) {
         display: block;
-        font-size: 20px;
+        font-size: 16px;
       }
 
       &.nuxt-link-exact-active {
@@ -221,6 +225,11 @@
         padding-top: 80px;
         flex-direction: column;
       }
+
+      @include breakpoint($bulma) {
+        padding-top: 15px;
+        flex-direction: row;
+      }
     }
 
     .navbar-end {
@@ -230,14 +239,28 @@
       display: flex;
       justify-content: center;
 
+      @include breakpoint($bulma) {
+        justify-content: flex-end;
+        align-items: bottom;
+        padding-top: 10px;
+      }
+
       svg {
         path {
           fill: $color-bg-light;
+
+          @include breakpoint($bulma) {
+            fill: $color-emphasis;
+          }
         }
 
         &:hover {
           path {
             fill: $color-bg-dark;
+
+            @include breakpoint($bulma) {
+              fill: $color-emphasis-alt;
+            }
           }
         }
       }
