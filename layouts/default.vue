@@ -19,7 +19,7 @@ export default {
   created () {
     setTimeout(() => {
       this.loading = false
-    }, 1000)
+    }, 1500)
   },
   data () {
     return {
