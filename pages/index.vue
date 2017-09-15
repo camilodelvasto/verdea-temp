@@ -20,8 +20,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.index {
-  animation: appearIn 0.5s;
-}
-
 </style>

@@ -17,3 +17,15 @@ html {
   max-width: 100%;
   overflow-x: hidden;  
 }
+
+.index {
+  animation: appearIn 0.2s;
+}
+
+.section {
+  text-align: center;
+
+  @include breakpoint($md) {
+    text-align: left;
+  }
+}
