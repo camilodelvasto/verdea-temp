@@ -12,3 +12,8 @@ body.modal-open {
 html {
   overflow: visible !important;
 }
+
+.page-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;  
+}

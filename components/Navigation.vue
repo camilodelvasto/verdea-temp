@@ -28,10 +28,9 @@
         <div class="navbar-start"
           v-on:click="closeMobileMenu()"
         >
-          <nuxt-link to="/regala-vida" class="navbar-item">Regala vida</nuxt-link>
-          <nuxt-link to="/sabrosura" class="navbar-item">Sabrosura</nuxt-link>
+          <nuxt-link exact to="/" class="navbar-item">Regala vida</nuxt-link>
           <nuxt-link to="/nosotros" class="navbar-item">Nosotros</nuxt-link>
-          <nuxt-link to="/contacto" class="navbar-item">Contacto</nuxt-link>
+          <nuxt-link to="/contact" class="navbar-item">Contacto</nuxt-link>
         </div>
         <div class="navbar-end"
           v-on:click="closeMobileMenu()"
@@ -125,7 +124,7 @@
 }
 
 .nav-container {
-  height: 75px;
+  height: 80px;
 
   .navbar {
     position: fixed;

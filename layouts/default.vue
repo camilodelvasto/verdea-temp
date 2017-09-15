@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="preloader" v-if="loading">
       <PagePreloader/>
     </div>
@@ -30,4 +30,5 @@ export default {
 </script>
 
 <style>
+.wrapper {}
 </style>
