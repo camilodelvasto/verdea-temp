@@ -134,6 +134,7 @@
     left: 0;
     right: 0;
     z-index: 900;
+    background-color: rgba(white, 0.95);
 
     .logo-alt {
       display: none;
