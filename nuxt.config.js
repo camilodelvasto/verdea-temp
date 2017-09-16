@@ -32,7 +32,7 @@ module.exports = {
       { hid: 'og:description', property: 'og:description', content: 'verdea: flores de amor y coco' },
     ],
     script: [
-      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "verdea", "url" : "https://verdea.online/", "logo" : "https://res.cloudinary.com/startics/image/upload/v1505401908/verdea-sticker_y1jitq.svg", "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+573192419869", "contactType" : "Ventas" }], "sameAs" : [ "https://facebook.com/verdeaonline/" ] }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "verdea", "url" : "https://verdea.online/", "logo" : "https://res.cloudinary.com/startics/image/upload/v1505401908/verdea-sticker_y1jitq.svg", "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+573192419869", "contactType" : "sales" }], "sameAs" : [ "https://facebook.com/verdeaonline/" ] }', type: 'application/ld+json' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [
