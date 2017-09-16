@@ -54,6 +54,9 @@ module.exports = {
   */
   plugins: ['~/plugins/buefy.js'],
   css: ['~/assets/main.scss'],
+  modules: [
+    ['@nuxtjs/google-analytics', { ua: 'UA-15029066-25' }],
+  ],  
   build: {
     /*
     ** Run ESLINT on save
