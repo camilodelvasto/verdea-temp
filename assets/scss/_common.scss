@@ -33,3 +33,14 @@
 .hide-on-load {
   opacity: 0;
 }
+
+.hide-desktop {
+  @include breakpoint($md) {
+    display: none !important;
+  }
+}
+.hide-mobile {
+  @include breakpoint($xs) {
+    display: none !important;
+  }
+}

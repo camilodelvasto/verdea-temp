@@ -31,7 +31,8 @@
           <nuxt-link exact to="/" class="navbar-item">Regala vida</nuxt-link>
           <nuxt-link to="/como-comprar" class="navbar-item">¿Cómo funciona?</nuxt-link>
           <nuxt-link target="_blank" to="//startics.typeform.com/to/MtkSjl" class="navbar-item">Contacto</nuxt-link>
-          <nuxt-link target="_blank" to="tel:573107730336" class="navbar-item">Tel: 310 773 0336</nuxt-link>
+          <nuxt-link target="_blank" to="tel:+573107730336" class="navbar-item hide-desktop">Tel: 310 773 0336</nuxt-link>
+          <span class="navbar-item hide-mobile">Tel: 310 773 0336</span>
 
         </div>
         <div class="navbar-end"
@@ -189,7 +190,7 @@
       flex-direction: row-reverse;
     }
 
-    a.navbar-item {
+    .navbar-item {
       font-family: $font-secondary;
       text-align: center;
       font-size: 16px;
