@@ -29,6 +29,5 @@ export default {
 }
 </script>
 
-<style>
-.wrapper {}
+<style scoped lang="scss">
 </style>

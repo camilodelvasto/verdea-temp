@@ -16,8 +16,8 @@
           </div> <!-- card -->
         </div>
     </div>
-    <div class="flexitem canvas-feed column columns is-tablet is-3 is-offset-0 is-6-desktop is-multiline">
-        <div class="card column is-half-desktop">
+    <div class="flexitem canvas-feed column columns is-tablet is-offset-0 is-6-desktop is-multiline">
+        <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
               <img src="https://res.cloudinary.com/startics/image/upload/v1505499681/tumblr_ophiutHiLR1trz70do1_500_1_o8gw90.jpg" alt="Placeholder image">
@@ -27,12 +27,12 @@
             <div class="media">
               <div class="media-content">
                 <p class="title is-4">Verdea rosada</p>
-                <p class="subtitle is-6"><a class="button is-success">$48.000 - Comprar</a></p>
+                <p class="subtitle is-6"><a class="button" disabled>$48.000 - Agotada</a></p>
               </div>
             </div>
           </div>
         </div> <!-- card -->
-        <div class="card column is-half-desktop">
+        <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
               <img src="https://res.cloudinary.com/startics/image/upload/v1505501333/tumblr_oi8me8zdNR1trz70do1_500_v7kvpr.jpg" alt="Placeholder image">
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div> <!-- card -->
-        <div class="card column is-half-desktop">
+        <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
               <img src="https://res.cloudinary.com/startics/image/upload/v1505501329/tumblr_oi2z5uh7Gi1trz70do1_500_swaqp9.jpg" alt="Placeholder image">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div> <!-- card -->
-        <div class="card column is-half-desktop">
+        <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
               <img src="https://res.cloudinary.com/startics/image/upload/v1505492455/imageedit_6_6230174407_hop5zy.jpg" alt="Placeholder image">
@@ -72,7 +72,30 @@
             <div class="media">
               <div class="media-content">
                 <p class="title is-4">Verdea rosada</p>
-                <p class="subtitle is-6"><a class="button is-success">$68.000 - Comprar</a></p>
+
+                <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+                  <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$68.000 - Comprar</button>
+                  <input name="buttonId" type="hidden" value="rJBsGXokK2pdG/cjsofc6Ak7/IeRzvEBdMBhs5W49iD6Cv30eH1k1g=="/>
+                  <input name="merchantId" type="hidden" value="38307"/>
+                  <input name="accountId" type="hidden" value="42341"/>
+                  <input name="description" type="hidden" value="Verdea Anturio Rojo"/>
+                  <input name="referenceCode" type="hidden" value="verdeacr"/>
+                  <input name="amount" type="hidden" value="54000"/>
+                  <input name="tax" type="hidden" value="0"/>
+                  <input name="taxReturnBase" type="hidden" value="0"/>
+                  <input name="shipmentValue" value="6000" type="hidden"/>
+                  <input name="currency" type="hidden" value="COP"/>
+                  <input name="lng" type="hidden" value="es"/>
+                  <input name="approvedResponseUrl" type="hidden" value="https://verdea.online/success"/>
+                  <input name="declinedResponseUrl" type="hidden" value="https://verdea.online/failure"/>
+                  <input name="pendingResponseUrl" type="hidden" value="https://verdea.online/pending"/>
+                  <input name="displayShippingInformation" type="hidden" value="YES"/>
+                  <input name="displayBuyerComments" type="hidden" value="true"/>
+                  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+                  <input name="buttonType" value="SIMPLE" type="hidden"/>
+                  <input name="signature" value="d7133d14a450b28b418d96f4dfcf40d7f32128a1ce0f02b4761aa9140cc567dd" type="hidden"/>
+                </form>
+
               </div>
             </div>
           </div>
@@ -123,6 +146,10 @@
     bottom: 0;
     width: 100%;
     color: white;
+
+    button {
+      font-family: $font-primary;
+    }
   }
 
   &.special {
