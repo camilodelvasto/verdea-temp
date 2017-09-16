@@ -31,7 +31,7 @@
           <nuxt-link exact to="/" class="navbar-item">Regala vida</nuxt-link>
           <nuxt-link to="/como-comprar" class="navbar-item">¿Cómo funciona?</nuxt-link>
           <nuxt-link target="_blank" to="//startics.typeform.com/to/MtkSjl" class="navbar-item">Contacto</nuxt-link>
-          <nuxt-link target="_blank" to="//tel:+573107730336" class="navbar-item hide-desktop">Tel: 310 773 0336</nuxt-link>
+          <a href="tel:+573107730336" class="navbar-item hide-desktop">Tel: 310 773 0336</a>
           <span class="navbar-item hide-mobile">Tel: 310 773 0336</span>
 
         </div>
