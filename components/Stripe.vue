@@ -20,13 +20,12 @@
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
-              <img src="https://res.cloudinary.com/startics/image/upload/v1505499681/tumblr_ophiutHiLR1trz70do1_500_1_o8gw90.jpg" alt="Placeholder image">
+              <img src="https://res.cloudinary.com/startics/image/upload/v1505623912/3_xf7hso.jpg" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">Verdea rosada</p>
                 <p class="subtitle is-6"><a class="button" disabled>$48.000 - Agotada</a></p>
               </div>
             </div>
@@ -35,13 +34,12 @@
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
-              <img src="https://res.cloudinary.com/startics/image/upload/v1505501333/tumblr_oi8me8zdNR1trz70do1_500_v7kvpr.jpg" alt="Placeholder image">
+              <img src="https://res.cloudinary.com/startics/image/upload/v1505623746/2_kjxnij.jpg" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">Verdea de anturio blanco</p>
                 <p class="subtitle is-6"><a class="button" disabled>$48.000 - Agotada</a></p>
               </div>
             </div>
@@ -50,13 +48,12 @@
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
-              <img src="https://res.cloudinary.com/startics/image/upload/v1505501329/tumblr_oi2z5uh7Gi1trz70do1_500_swaqp9.jpg" alt="Placeholder image">
+              <img src="https://res.cloudinary.com/startics/image/upload/v1505623497/1_cgc32r.jpg" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">Verdea rosada</p>
                 <p class="subtitle is-6"><a class="button" disabled>$48.000 - Agotada</a></p>
               </div>
             </div>
@@ -65,14 +62,12 @@
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
-              <img src="https://res.cloudinary.com/startics/image/upload/v1505492455/imageedit_6_6230174407_hop5zy.jpg" alt="Placeholder image">
+              <img src="https://res.cloudinary.com/startics/image/upload/v1505624226/4_jgmena.jpg" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">Verdea rosada</p>
-
                 <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
                   <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$68.000 - Comprar</button>
                   <input name="buttonId" type="hidden" value="rJBsGXokK2pdG/cjsofc6Ak7/IeRzvEBdMBhs5W49iD6Cv30eH1k1g=="/>
@@ -154,7 +149,7 @@
 
   &.special {
     .card-content {
-      font-family: $font-logo;
+      font-family: $font-primary;
       position: static;
       font-size: 20px;
       line-height: 1;

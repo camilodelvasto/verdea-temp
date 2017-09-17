@@ -5,21 +5,24 @@
     </div>
     <div class="default-layout">
       <nuxt v-bind:class="{ 'hide-on-load': loading }" v-if="!loading"/>
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
 import PagePreloader from '~/components/PagePreloader.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    PagePreloader
+    PagePreloader,
+    Footer
   },
   created () {
     setTimeout(() => {
       this.loading = false
-    }, 1500)
+    }, 500)
   },
   data () {
     return {

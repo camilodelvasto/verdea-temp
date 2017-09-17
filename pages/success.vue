@@ -11,19 +11,16 @@
         </div>
       </section>
 
-      <AlmostAFooter />
     </div>
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation.vue'
-import AlmostAFooter from '~/components/AlmostAFooter.vue'
 
 export default {
   components: {
-    Navigation,
-    AlmostAFooter
+    Navigation
   }
 }
 </script>

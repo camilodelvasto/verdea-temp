@@ -14,18 +14,6 @@
         </div>
       </section>
 
-      <section class="hero"
-        v-bind:style="{ backgroundImage: 'url(https://res.cloudinary.com/startics/image/upload/v1505492455/imageedit_6_6230174407_hop5zy.jpg)'}"
-      >
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
-              Una verdea para ti, una para mí.
-            </h1>
-          </div>
-        </div>
-      </section>
-
     </div>
   </div>
 </template>
