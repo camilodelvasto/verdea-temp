@@ -28,13 +28,13 @@
               <div class="media-content">
 
                 <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
-                  <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$55.000 - Comprar</button>
-                  <input name="buttonId" type="hidden" value="rJBsGXokK2pdG/cjsofc6Ak7/IeRzvEBdMBhs5W49iD6Cv30eH1k1g=="/>
+                  <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$49.000 - Comprar</button>
+                  <input name="buttonId" type="hidden" value="mR84p1gGgRsBC3Z4o3vIbkt/DkV2aBZsUqVSTiy6CkEGWkl6aMl9Gw=="/>
                   <input name="merchantId" type="hidden" value="38307"/>
                   <input name="accountId" type="hidden" value="42341"/>
-                  <input name="description" type="hidden" value="Verdea Anturio Rojo"/>
-                  <input name="referenceCode" type="hidden" value="verdeacr"/>
-                  <input name="amount" type="hidden" value="54000"/>
+                  <input name="description" type="hidden" value="Verdea Flores Rosadas y envío en Bogotá"/>
+                  <input name="referenceCode" type="hidden" value="verdeafr1"/>
+                  <input name="amount" type="hidden" value="55000"/>
                   <input name="tax" type="hidden" value="0"/>
                   <input name="taxReturnBase" type="hidden" value="0"/>
                   <input name="shipmentValue" value="6000" type="hidden"/>
@@ -47,7 +47,8 @@
                   <input name="displayBuyerComments" type="hidden" value="true"/>
                   <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
                   <input name="buttonType" value="SIMPLE" type="hidden"/>
-                  <input name="signature" value="d7133d14a450b28b418d96f4dfcf40d7f32128a1ce0f02b4761aa9140cc567dd" type="hidden"/>
+                  <input name="signature" value="9d58265f8b52ccc602b7fc4d6ae5722380ba469dff6ad3fff6b8c7c0227ea224" type="hidden"/>
+
                 </form>
 
 
@@ -80,13 +81,13 @@
               <div class="media-content">
 
                 <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
-                  <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$55.000 - Comprar</button>
-                  <input name="buttonId" type="hidden" value="rJBsGXokK2pdG/cjsofc6Ak7/IeRzvEBdMBhs5W49iD6Cv30eH1k1g=="/>
+                  <button type="submit" class="button is-success" border="0" alt="" onClick="this.form.urlOrigen.value = window.location.href;">$49.000 - Comprar</button>
+                  <input name="buttonId" type="hidden" value="mLPmBpomef24oIOzql7gKNp0jESRJey8YDBEi2g7P+LNx6fx5bpWCg=="/>
                   <input name="merchantId" type="hidden" value="38307"/>
                   <input name="accountId" type="hidden" value="42341"/>
-                  <input name="description" type="hidden" value="Verdea Anturio Rojo"/>
-                  <input name="referenceCode" type="hidden" value="verdeacr"/>
-                  <input name="amount" type="hidden" value="54000"/>
+                  <input name="description" type="hidden" value="Verdea Hojas Verdes y envío en Bogotá"/>
+                  <input name="referenceCode" type="hidden" value="verdeahv2"/>
+                  <input name="amount" type="hidden" value="55000"/>
                   <input name="tax" type="hidden" value="0"/>
                   <input name="taxReturnBase" type="hidden" value="0"/>
                   <input name="shipmentValue" value="6000" type="hidden"/>
@@ -99,7 +100,8 @@
                   <input name="displayBuyerComments" type="hidden" value="true"/>
                   <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
                   <input name="buttonType" value="SIMPLE" type="hidden"/>
-                  <input name="signature" value="d7133d14a450b28b418d96f4dfcf40d7f32128a1ce0f02b4761aa9140cc567dd" type="hidden"/>
+                  <input name="signature" value="3cdd8176f38a3853f97b885e291313ad4cc25d14e7155761690af92cb1724da1" type="hidden"/>
+
                 </form>
               </div>
             </div>
