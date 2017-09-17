@@ -157,14 +157,14 @@
       background-color: $color-bg-light;
       opacity: 1;
       transition: background-color 0.4s ease-in-out;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
       height: 100%;
       display: flex;
       flex-direction: column;
       bottom: 0;
 
       .navbar-brand {
-        display: none;        
+        display: none;
       }
 
       .logo-alt {
@@ -214,7 +214,7 @@
     &.is-active {
       display: flex;
       flex-direction: column;
-      animation: movingBackground ease-in-out infinite 18s;
+      background-color: $color-emphasis;
 
       a.navbar-item {
         color: $color-bg-light;
