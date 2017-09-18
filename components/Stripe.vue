@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper columns">
-    <div class="flexitem canvas-left column columns is-one-quarter-tablet is-offset-1">
+  <div class="wrapper ">
+    <div class="flexitem canvas-left columns is-one-quarter-tablet is-offset-1">
         <div class="fixed">
           <div class="card special">
             <div class="card-image">
@@ -16,7 +16,7 @@
           </div> <!-- card -->
         </div>
     </div>
-    <div class="flexitem canvas-feed column columns is-tablet is-offset-0 is-6-desktop is-multiline">
+    <div class="flexitem canvas-feed columns is-tablet is-offset-0 is-6-desktop is-multiline">
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
@@ -186,25 +186,48 @@
   }
 }
 
-.fixed {
-  @include breakpoint($sm) {
-    position: fixed;
-    width: 25%;
-  }
-}
-
 .canvas-left {
   order: -1;
+
+  @include breakpoint($sm) {
+    width: 30%;
+    margin-top: 30px;
+  }
+
+  @include breakpoint($md) {
+    width: 22%;
+    margin-top: 30px;
+  }
+
+  .fixed {
+    @include breakpoint($sm) {
+      position: fixed;
+      margin-left: 5%;
+      width: 30%;
+    }
+
+    @include breakpoint($md) {
+      width: 22%;
+    }
+  }
+
 }
 
 .canvas-feed {
   order: 1;
 
+  @include breakpoint($sm) {
+    width: 30%;
+    margin-left: 40%;
+    margin-top: 15px;
+  }
+
   @include breakpoint($md) {
-    margin-left: 15px;
+    margin-left: 30%;
     align-items: flex-start;
     justify-content: space-around;
     margin-top: 60px;
+    width: 44%;
   }
 }
 
