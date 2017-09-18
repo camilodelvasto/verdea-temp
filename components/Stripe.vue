@@ -223,7 +223,7 @@
   }
 
   @include breakpoint($md) {
-    margin-left: 30%;
+    margin-left: 26.5%;
     align-items: flex-start;
     justify-content: space-around;
     margin-top: 60px;
