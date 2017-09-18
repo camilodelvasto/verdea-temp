@@ -24,12 +24,12 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 6px;
 
-  .logo {
-    svg {
-    }
+  @include breakpoint($sm) {
+    padding-top: 0;
   }
+
 }
 
 .expanded {

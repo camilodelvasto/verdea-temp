@@ -14,12 +14,11 @@ html {
 }
 
 .page-wrapper {
+  background: rgba($color-emphasis-alt, 0.08);
   max-width: 100%;
-  overflow-x: hidden;  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: rgba($color-emphasis-alt, 0.08);
 }
 
 .section {

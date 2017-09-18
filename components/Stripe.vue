@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper ">
-    <div class="flexitem canvas-left columns is-one-quarter-tablet is-offset-1">
+    <div class="flexitem canvas-left columns">
         <div class="fixed">
           <div class="card special">
             <div class="card-image">
@@ -16,7 +16,7 @@
           </div> <!-- card -->
         </div>
     </div>
-    <div class="flexitem canvas-feed columns is-tablet is-offset-0 is-6-desktop is-multiline">
+    <div class="flexitem canvas-feed columns is-multiline">
         <div class="card column is-half-tablet">
           <div class="card-image">
             <figure class="image">
@@ -137,6 +137,11 @@
   padding: 0;
 }
 
+.columns {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .card {
   border: 12px solid white;
   margin-bottom: 18px;
@@ -217,17 +222,17 @@
   order: 1;
 
   @include breakpoint($sm) {
-    width: 30%;
-    margin-left: 40%;
+    width: 60%;
+    margin-left: 37.5%;
     margin-top: 15px;
   }
 
   @include breakpoint($md) {
-    margin-left: 26.5%;
+    margin-left: 27.5%;
     align-items: flex-start;
     justify-content: space-around;
     margin-top: 60px;
-    width: 44%;
+    width: 55%;
   }
 }
 
