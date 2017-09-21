@@ -30,7 +30,7 @@
               <div class="media">
                 <div class="media-content">
                   {{ product.fields.name }}
-                  <p class="subtitle is-6"><a class="button" disabled>{{ product.fields.price }}</a></p>
+                  <p class="subtitle is-6"><a class="button" v-on:click="addToCart(product)">{{ product.fields.price }} - Comprar</a></p>
                 </div>
               </div>
             </div>
