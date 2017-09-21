@@ -8,7 +8,7 @@
               <div class="card special">
                 <div class="card-image">
                   <figure class="image">
-                    <img src="https://res.cloudinary.com/startics/image/upload/v1505489852/tumblr_omc7tojjgr1trz70do1_500_1_gpddpl.jpg" alt="Placeholder image">
+                    <img src="https://res.cloudinary.com/startics/image/upload/v1506024359/imageedit_13_5126887008_pe1f7r.jpg" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="card-content">
@@ -29,8 +29,8 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  {{ product.fields.name }}
-                  <p class="subtitle is-6"><a class="button" v-on:click="addToCart(product)">{{ product.fields.price }} - Comprar</a></p>
+                  <span>{{ product.fields.name }}</span>
+                  <a class="button is-success" v-on:click="addToCart(product)">{{ product.fields.price }} - Comprar</a>
                 </div>
               </div>
             </div>
@@ -109,11 +109,17 @@ export default {
   }
 
   .card-content {
-    background: rgba($color-bg-light, 0.4);
+    background: rgba(white, 0.1);
+    color: white;
     position: absolute;
     bottom: 0;
     width: 100%;
     color: white;
+
+    span {
+      display: block;
+      margin-bottom: 10px;
+    }
 
     button {
       font-family: $font-primary;
