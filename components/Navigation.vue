@@ -30,6 +30,7 @@
         >
           <nuxt-link exact to="/" class="navbar-item">Regala vida</nuxt-link>
           <nuxt-link to="/como-comprar" class="navbar-item">¿Cómo funciona?</nuxt-link>
+          <nuxt-link to="/checkout" class="navbar-item">Checkout</nuxt-link>
           <nuxt-link target="_blank" to="//startics.typeform.com/to/MtkSjl" class="navbar-item">Contacto</nuxt-link>
           <a href="tel:+573192419869" class="navbar-item hide-desktop">Tel: 319 241 9869</a>
           <span class="navbar-item hide-mobile">Tel: 319 241 9869</span>
