@@ -7,14 +7,14 @@
         <div class="container">
           <h2>Resumen de compra</h2>
           <ul>
-            <li v-for="product in getCart" track-by="$index">
+            <li v-for="product in getCart" v-if="0 < $store.state.shoppingBag[product.id]">
               {{ product.fields.name }}<br>
               image: {{ product.fields.picture.fields.file.url }}<br>
               {{ product.fields.price }}<br>
-              {{ product.qty}}<br>
+              qty: {{ $store.state.shoppingBag[product.id]}}<br>
               {{ product.id }}
               <button class="button" v-on:click="$store.commit('plusOne', product.id)">+1</button>
-              <button class="button" v-on:click="minusOne(product.id)">-1</button>
+              <button class="button" v-on:click="$store.commit('minusOne', product.id)">-1</button>
             </li>
           </ul>
 
@@ -39,12 +39,13 @@ export default {
   },
   methods: {
     printCart () {
+      console.log('being computed, ', this.$store.state.products)
       console.log(this.$store.state.products)
     }
   },
   computed: {
     getCart () {
-      console.log('being called, ', this.$store.state.products)
+      console.log('being computed, ', this.$store.state.products)
       return this.$store.state.products
     }
   }
