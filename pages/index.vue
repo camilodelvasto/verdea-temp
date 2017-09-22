@@ -31,8 +31,8 @@
                 <div class="media-content">
                   <span>{{ product.fields.name }}</span>
                   <a class="button is-success" v-on:click="addToCart(product)">{{ product.fields.price }} - Comprar</a>
-                  <button @click="$store.commit('addToCart', product); printCart()">add to cart - {{ $store.state.counter }}</button>
-                  <button @click="$store.commit('removeFromCart', product); printCart()">remove</button>
+                  <button @click="$store.commit('addToCart', product)">add to cart - {{ $store.state.counter }}</button>
+                  <button @click="$store.commit('removeFromCart', product)">remove</button>
                 </div>
               </div>
             </div>
@@ -68,11 +68,6 @@ export default {
         products: products.items
       }
     }).catch(console.error)
-  },
-  methods: {
-    printCart () {
-      console.log(this.$store.state.products)
-    }
   }
 }
 </script>

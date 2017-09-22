@@ -6,12 +6,15 @@
       <section class="section">
         <div class="container">
           <h2>Resumen de compra</h2>
-{{ $store.state.products['6D47MKl1GEkqi0eecu80CI'] }}
-{{ $store.state.counter }} - 
           <ul>
             <li v-for="product in getCart" track-by="$index">
-              hey
-              {{ product.fields.name }}, {{ product.fields.picture.fields.file }}, {{ product.fields.price }}
+              {{ product.fields.name }}<br>
+              image: {{ product.fields.picture.fields.file.url }}<br>
+              {{ product.fields.price }}<br>
+              {{ product.qty}}<br>
+              {{ product.id }}
+              <button class="button" v-on:click="$store.commit('plusOne', product.id)">+1</button>
+              <button class="button" v-on:click="minusOne(product.id)">-1</button>
             </li>
           </ul>
 
