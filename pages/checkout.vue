@@ -3,15 +3,15 @@
     <div class="page-wrapper">
       <Navigation />
 
-      <section class="section" v-if="0 !== Object.keys($store.state.shoppingBag).length">
+      <section class="section">
         <div class="container">
           <h2>Resumen de compra</h2>
           <ul>
-            <li v-for="product in getCart" v-if="0 !== $store.state.shoppingBag[product.id]">
+            <li v-for="product in $store.state.cart.products" track-by="$index">
               {{ product.fields.name }}<br>
               image: {{ product.fields.picture.fields.file.url }}<br>
               {{ product.fields.price }}<br>
-              qty: {{ $store.state.shoppingBag[product.id]}}<br>
+              qty: {{ product.qty}}<br>
               {{ product.id }}
               <button class="button" v-on:click="$store.commit('plusOne', product.id)">+1</button>
               <button class="button" v-on:click="$store.commit('minusOne', product.id)">-1</button>
@@ -24,7 +24,8 @@
           </form>
         </div>
       </section>
-      <section v-if="0 === Object.keys($store.state.shoppingBag).length">
+
+      <section class="section">
         <div class="container">
           <h2>No hay productos en el carrito de compras</h2>
           <p>Regresa al <nuxt-link to="/">inicio</nuxt-link> para ver los productos disponibles.</p>
