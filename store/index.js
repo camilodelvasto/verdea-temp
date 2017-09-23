@@ -42,9 +42,10 @@ const createStore = () => {
         if (state.shoppingBag[productId] > 0) {
           state.shoppingBag[productId]--
         } else {
-          delete state.products[productId]
-          delete state.shoppingBag[productId]
+          Vue.delete(state.products, productId)
+          Vue.delete(state.shoppingBag, productId)
         }
+        console.log(state.shoppingBag)
       }
     },
     computed: {
