@@ -8,12 +8,12 @@
               <div class="card special">
                 <div class="card-image">
                   <figure class="image">
-                    <img src="https://res.cloudinary.com/startics/image/upload/v1506024359/imageedit_13_5126887008_pe1f7r.jpg" alt="Placeholder image">
+                    <img src="https://res.cloudinary.com/startics/image/upload/v1506045849/E707D0B2-36DA-406E-83CB-FEE0DC5D3D60_lrt7x6.jpg" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="content">
-                    verdea: planta enriquecida con matera natural de coco, siguiendo el antiqüísimo arte japonés.
+                    Verdea: el encuentro de la naturaleza y el arte. Materas orgánicas hechas con amor para plantas únicas.
                   </div>
                 </div>
               </div> <!-- card -->
