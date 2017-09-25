@@ -30,9 +30,17 @@
               <div class="media">
                 <div class="media-content">
                   <span>{{ product.fields.name }}</span>
-                  <a class="button is-success" v-on:click="addToCart(product)">{{ product.fields.price }} - Comprar</a>
-                  <button @click="$store.commit('addToCart', product)">add to cart - {{ $store.state.counter }}</button>
-                  <button @click="$store.commit('removeFromCart', product)">remove</button>
+                  <button class="button is-success"
+                          @click="$store.commit('addToCart', product)"
+                          v-if="!isInCart(product.sys.id)"
+                  >Añadir</button>
+                  <button class="button is-warning"
+                          @click="$store.commit('removeFromCart', product)"
+                          v-else
+                  >Eliminar</button>
+                  <nuxt-link class="cart-icon button" to="/checkout" v-if="isInCart(product.sys.id)">
+                    <CartIcon/>
+                  </nuxt-link>
                 </div>
               </div>
             </div>
@@ -46,13 +54,15 @@
 <script>
 import Navigation from '~/components/Navigation.vue'
 import {createClient} from '~/plugins/contentful.js'
+import CartIcon from '~/components/CartIcon.vue'
 
 const client = createClient()
 
 export default {
   transition: 'page',
   components: {
-    Navigation
+    Navigation,
+    CartIcon
   },
   asyncData ({env}) {
     return Promise.all([
@@ -68,6 +78,11 @@ export default {
         products: products.items
       }
     }).catch(console.error)
+  },
+  methods: {
+    isInCart (productId) {
+      return this.$store.state.cart.products[productId] !== undefined
+    }
   }
 }
 </script>
@@ -183,6 +198,15 @@ export default {
     justify-content: space-around;
     margin-top: 60px;
     width: 55%;
+  }
+
+  .cart-icon {
+    margin-left: 10px;
+    display: inline-block;
+    
+    svg {
+      margin-top: 5px;
+    }
   }
 }
 

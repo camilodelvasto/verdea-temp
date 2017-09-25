@@ -6,7 +6,7 @@ const createStore = () => {
     state: {
       cart: {
         total: 0,
-        items: 0,
+        qty: 0,
         products: {}
       }
     },
@@ -23,20 +23,27 @@ const createStore = () => {
           newItem.id = productId
           newItem.qty = 1
           Vue.set(products, productId, newItem)
+          updateItemsInCart(state)
         }
       },
       removeFromCart (state, item) {
         let products = state.cart.products
-        let productId = item.sys.id
+        let productId = ''
+        if (item.sys !== undefined) {
+          productId = item.sys.id
+        } else {
+          productId = item
+        }
 
         if (products[productId] !== undefined) {
           Vue.delete(products, productId)
+          updateItemsInCart(state)
         }
       },
       plusOne (state, productId) {
         let products = state.cart.products
         products[productId].qty++
-        console.log(products)
+        updateItemsInCart(state)
       },
       minusOne (state, productId) {
         let products = state.cart.products
@@ -47,15 +54,23 @@ const createStore = () => {
           } else {
             Vue.delete(products, productId)
           }
+          updateItemsInCart(state)
         }
-      }
-    },
-    computed: {
-      count () {
-        return this.$store.state.products
       }
     }
   })
+
+  function updateItemsInCart (state) {
+    var obj = state.cart.products
+    var priceTotal = 0
+    var qtyTotal = 0
+    Object.keys(obj).map(function (key) {
+      priceTotal += obj[key].fields.price * obj[key].qty
+      qtyTotal += obj[key].qty
+    })
+    state.cart.total = priceTotal
+    state.cart.qty = qtyTotal
+  }
 }
 
 export default createStore
