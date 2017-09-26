@@ -239,9 +239,11 @@ export default {
       }
 
       form {
-        @include breakpoint($bulma) {
-          display: flex;
-          justify-content: flex-end;
+        margin-top: 10px;
+
+        button {
+          display: block;
+          width: 100%;
         }
       }
     }
