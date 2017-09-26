@@ -309,10 +309,10 @@
 
     .cart {
       display: flex;
-      margin-top: -7px;
+      margin: auto;
+      margin-top: -3px;
 
       span {
-        align-self: center;
         min-width: 20px;
       }
     }

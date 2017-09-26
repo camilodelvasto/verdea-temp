@@ -5,7 +5,7 @@
     >
       <div class="modal-background"></div>
       <div class="modal-content">
-        <p class="image is-4by3">
+        <p class="image">
           <img v-bind:src="img">
         </p>
       </div>
@@ -14,51 +14,66 @@
     <div class="page-wrapper">
       <Navigation />
       <section class="section" v-if="itemsInCart !== 0">
-        <div class="container">
-          <h2>Resumen de compra</h2>
-
-          <div class="table columns is-mobile table-header">
-            <div class="column hide-mobile"></div>
-            <div class="column"></div>
-            <div class="column">Cantidad</div>
-            <div class="column">Precio</div>
-          </div>
-
-          <div class="table columns is-mobile" v-for="product in $store.state.cart.products" track-by="$index">
-            <div class="column hide-mobile">
-              <figure class="item-image">
-                <a v-on:click="openModal(product.fields.picture.fields.file.url)">
-                  <img v-bind:src="product.fields.picture.fields.file.url" >
-                </a>
-              </figure>
-            </div>
-            <div class="column item-title hide-mobile">{{ product.fields.name }}</div>
-            <div class="column hide-desktop">
-              <a v-on:click="openModal(product.fields.picture.fields.file.url)">{{ product.fields.name }}</a>
+        <div class="container cart-wrapper">
+          <div class="table-wrapper">
+            <h2>Carrito de compras</h2>
+            <div class="table columns gapless is-mobile table-header">
+              <div class="column hide-mobile"></div>
+              <div class="column"></div>
+              <div class="column c-center">Cantidad</div>
+              <div class="column price">Precio</div>
             </div>
 
-            <div class="column">
-              <div class="item-qty">
-                <button class="button" v-on:click="$store.commit('minusOne', product.id)">-</button>
-                {{ product.qty}}
-                <button class="button" v-on:click="$store.commit('plusOne', product.id)">+</button>
-                <br>
-                <a class="" @click="$store.commit('removeFromCart', product.id)">Remover</a>
+            <div class="table-content-wrapper">
+              <div class="table columns gapless is-mobile table-body" v-for="product in $store.state.cart.products" track-by="$index">
+                <div class="column hide-mobile">
+                  <figure class="item-image">
+                    <a v-on:click="openModal(product.fields.picture.fields.file.url)">
+                      <img v-bind:src="product.fields.picture.fields.file.url" >
+                    </a>
+                  </figure>
+                </div>
+                <div class="column item-title hide-mobile">
+                  {{ product.fields.name }}
+                </div>
+                <div class="column hide-desktop">
+                  <a v-on:click="openModal(product.fields.picture.fields.file.url)">{{ product.fields.name }}</a>
+                </div>
+                <div class="column c-qty">
+                  <div class="item-qty">
+                    <button class="button" v-on:click="$store.commit('minusOne', product.id)">-</button>
+                    {{ product.qty}}
+                    <button class="button" v-on:click="$store.commit('plusOne', product.id)">+</button>
+                  </div>
+                </div>
+                <div class="column price">
+                  {{ product.fields.price | currency }}
+                  <br>
+                  <a class="remove-from-cart" @click="$store.commit('removeFromCart', product.id)">Remover</a>
+                </div>
+              </div>
+              <div class="table columns gapless is-mobile table-footer">
+                <div class="column align-right is-half-mobile is-three-quarters-desktop">Total ({{ itemsInCart }} productos):</div>
+                <div class="column price">{{ cartTotal | currency }}</div>
               </div>
             </div>
-            <div class="column">{{ product.fields.price }}</div>
-          </div>
-          <div class="table columns is-mobile table-footer">
-            <div class="column hide-mobile"></div>
-            <div class="column hide-mobile"></div>
-            <div class="column align-right is-two-thirds-mobile">Total por {{ itemsInCart }} productos:</div>
-            <div class="column">{{ cartTotal }}</div>
           </div>
 
-          <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
-            <button type="submit">checkout</button>
-            <input name="amount" type="hidden" value="$store.state.shoppingBag" />
-          </form>
+          <div class="summary-wrapper">
+            <div class="summary-box">
+              <h3>Resumen</h3>
+              <p>Número de ítems: <span>{{ itemsInCart }}</span></p>
+              <p>Total: <span class="total-red">{{ cartTotal | currency }}</span></p>
+              <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
+                <button class="button is-warning" type="submit">Procesar pedido</button>
+                <input name="amount" type="hidden" value="$store.state.shoppingBag" />
+              </form>
+              <span class="notice">
+                *Costo de envío para Bogotá: $6.000.<br>
+                Envíos gratis en Bogotá por pedidos mayores a $60.000.
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -112,6 +127,11 @@ export default {
       document.body.classList.add('modal-open')
       vm.showingModal = true
     }
+  },
+  filters: {
+    currency: function (value) {
+      return '$' + value.toLocaleString('es-CO')
+    }
   }
 }
 </script>
@@ -120,18 +140,142 @@ export default {
 .section {
   padding: 0;
 }
-.item-qty {
-  .button {
-    font-size:10px;
-    margin: 0 2px;
-    font-weight: bold;
-  }
-}
 .modal {
   z-index: 12000;
+
+  .modal-content {
+    margin: 0;
+  }
+}
+
+.c-qty {
+  display: flex;
+
+  .item-qty {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    justify-content: space-evenly;
+    display: flex;
+
+    @include breakpoint($bulma) {
+      align-self: flex-start;
+    }
+
+    .button {
+      width: 25px;
+      font-size: 12px;
+
+      @include breakpoint($bulma) {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include breakpoint($bulma) {
+    flex-direction: row;
+  }
+
+  .table-wrapper {
+    @include breakpoint($bulma) {
+      width: 60%;
+    }
+  }
+
+  .summary-wrapper {
+    @include breakpoint($bulma) {
+      padding-left: 100px;
+      width: 40%;
+      position: relative;
+    }
+
+    .summary-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: white;
+      border: 1px solid $color-gray;
+      border-radius: 5px;
+      margin-bottom: 30px;
+
+      @include breakpoint($bulma) {
+        position: fixed;
+        margin-top: 40px;
+      }
+
+      p {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 16px;
+        margin-bottom: 5px;
+
+        @include breakpoint($bulma) {
+          display: block;
+        }
+      }
+
+      .notice {
+        font-size: 10px;
+        line-height: 1.1;
+        display: block;
+        margin-top: 10px;
+      }
+
+      span {
+        font-weight: bold;
+
+        @include breakpoint($bulma) {
+          float: right;
+        }
+
+        &.total-red {
+          color: red;
+        }
+      }
+
+      form {
+        @include breakpoint($bulma) {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+}
+
+.table-body {
+  padding-bottom: 10px;
+}
+
+.column {
+  text-align: left;
+
+  &.c-center {
+    text-align: center;
+  }
+
+  &.price {
+    text-align: right;
+  }
+}
+
+.table-content-wrapper {
+  padding: 15px 0;
+}
+
+.remove-from-cart {
+  font-size: 10px;
 }
 
 .table {
+  background: transparent;
+
   &.table-header {
     font-weight: bold;
     border-bottom: 1px solid $color-gray;

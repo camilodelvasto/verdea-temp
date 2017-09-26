@@ -12,6 +12,14 @@ svg {
     fill: $color-emphasis;
   }
 }
+.is-active {
+  svg {
+    path {
+      fill: white;
+    }
+  }
+}
+
 </style>
 
 <script>

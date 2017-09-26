@@ -42,7 +42,9 @@ const createStore = () => {
       },
       plusOne (state, productId) {
         let products = state.cart.products
-        products[productId].qty++
+        if (products[productId].qty < 10) {
+          products[productId].qty++
+        }
         updateItemsInCart(state)
       },
       minusOne (state, productId) {
@@ -51,11 +53,14 @@ const createStore = () => {
         if (products.hasOwnProperty(productId)) {
           if (products[productId].qty > 1) {
             products[productId].qty--
-          } else {
-            Vue.delete(products, productId)
           }
           updateItemsInCart(state)
         }
+      },
+      setNumberOfItems (state, payload) {
+        let products = state.cart.products
+        products[payload.productId].qty = payload.amount
+        updateItemsInCart(state)
       }
     }
   })

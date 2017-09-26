@@ -29,7 +29,7 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <span>{{ product.fields.name }}</span>
+                  <span>{{ product.fields.name }}: {{ product.fields.price | currency }}</span>
                   <button class="button is-success"
                           @click="$store.commit('addToCart', product)"
                           v-if="!isInCart(product.sys.id)"
@@ -82,6 +82,11 @@ export default {
   methods: {
     isInCart (productId) {
       return this.$store.state.cart.products[productId] !== undefined
+    }
+  },
+  filters: {
+    currency: function (value) {
+      return '$' + value.toLocaleString('es-CO')
     }
   }
 }
