@@ -3,7 +3,7 @@
     <div class="modal"
       v-bind:class="{ 'is-active': showingModal }"
     >
-      <div class="modal-background"></div>
+      <div class="modal-background" v-on:click="closeModalImage()"></div>
       <div class="modal-content">
         <p class="image">
           <img v-bind:src="img">
@@ -66,7 +66,9 @@
               <p>Total: <span class="total-red">{{ cartTotal | currency }}</span></p>
               <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
                 <button class="button is-warning" type="submit">Procesar pedido</button>
-                <input name="amount" type="hidden" value="$store.state.shoppingBag" />
+                <input name="cartTotal" type="hidden" :value="cartTotal" />
+                <input name="itemsInCart" type="hidden" :value="itemsInCart" />
+                <input name="cartProducts" type="hidden" :value="cartProducts" />
               </form>
               <span class="notice">
                 *Costo de envío para Bogotá: $6.000.<br>
@@ -106,6 +108,9 @@ export default {
     },
     cartTotal () {
       return this.$store.state.cart.total
+    },
+    cartProducts () {
+      return JSON.stringify(this.$store.state.cart.products)
     }
   },
   methods: {
@@ -143,6 +148,9 @@ export default {
 .modal {
   z-index: 12000;
 
+  .modal-background:hover {
+    cursor: pointer;
+  }
   .modal-content {
     margin: 0;
   }
