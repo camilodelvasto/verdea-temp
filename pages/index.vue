@@ -1,5 +1,16 @@
 <template>
   <div class="index">
+    <div class="modal"
+      v-bind:class="{ 'is-active': showingModal }"
+    >
+      <div class="modal-background" v-on:click="closeModalImage()"></div>
+      <div class="modal-content">
+        <p class="image">
+          <img v-bind:src="img">
+        </p>
+      </div>
+      <button class="modal-close is-large" aria-label="close" v-on:click="closeModalImage()"></button>
+    </div>
     <div class="page-wrapper">
       <Navigation />
       <div class="feed-wrapper ">
@@ -23,7 +34,9 @@
           <div class="card column is-half-tablet" v-for="product in products">
             <div class="card-image">
               <figure class="image">
-                <img v-bind:src="product.fields.picture.fields.file.url">
+                <a v-on:click="openModal(product.fields.picture.fields.file.url)">
+                  <img v-bind:src="product.fields.picture.fields.file.url" >
+                </a>
               </figure>
             </div>
             <div class="card-content">
@@ -64,6 +77,12 @@ export default {
     Navigation,
     CartIcon
   },
+  data () {
+    return {
+      showingModal: false,
+      img: ''
+    }
+  },
   asyncData ({env}) {
     return Promise.all([
       // fetch all blog products sorted by creation date
@@ -82,6 +101,21 @@ export default {
   methods: {
     isInCart (productId) {
       return this.$store.state.cart.products[productId] !== undefined
+    },
+    openModal (img) {
+      var vm = this
+      vm.img = img
+      vm.openModalImage()
+    },
+    closeModalImage () {
+      var vm = this
+      document.body.classList.remove('modal-open')
+      vm.showingModal = false
+    },
+    openModalImage () {
+      var vm = this
+      document.body.classList.add('modal-open')
+      vm.showingModal = true
     }
   },
   filters: {

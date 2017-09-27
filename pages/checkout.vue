@@ -41,9 +41,19 @@
                 </div>
                 <div class="column c-qty">
                   <div class="item-qty">
-                    <button class="button" v-on:click="$store.commit('minusOne', product.id)">-</button>
-                    {{ product.qty}}
-                    <button class="button" v-on:click="$store.commit('plusOne', product.id)">+</button>
+                    <button class="button button-minus" v-on:click="$store.commit('minusOne', product.id)"
+                            :disabled="product.qty <= 1">
+                      <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                        <path d="M19,13H5V11H19V13Z" />
+                      </svg>
+                    </button>
+                    <span>{{ product.qty}}</span>
+                    <button class="button button-plus" v-on:click="$store.commit('plusOne', product.id)"
+                            :disabled="product.qty >= 10">
+                      <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div class="column price">
@@ -145,16 +155,6 @@ export default {
 .section {
   padding: 0;
 }
-.modal {
-  z-index: 12000;
-
-  .modal-background:hover {
-    cursor: pointer;
-  }
-  .modal-content {
-    margin: 0;
-  }
-}
 
 .c-qty {
   display: flex;
@@ -164,18 +164,60 @@ export default {
     align-self: center;
     text-align: center;
     justify-content: space-evenly;
+    align-items: center;
     display: flex;
+    background: white;
+    height: 35px;
 
     @include breakpoint($bulma) {
       align-self: flex-start;
     }
 
-    .button {
-      width: 25px;
-      font-size: 12px;
+    span {
+      align-self: center;
+      flex: 1;
+      width: 50px;
+      font-size: 16px;
+      height: 100%;
+      border-top: 1px solid $color-medium-gray;
+      border-bottom: 1px solid $color-medium-gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      @include breakpoint($bulma) {
-        font-weight: bold;
+    .button {
+      border: 1px solid $color-medium-gray;
+      height: 100%;
+      svg {
+        path {
+          fill: $color-medium-gray;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: $color-dark-gray;
+          }
+        }
+      }
+
+      &:disabled {
+        svg {
+          path {
+            fill: $color-gray;
+          }
+        }        
+      }
+
+      &.button-plus {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      &.button-minus {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }

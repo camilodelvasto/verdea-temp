@@ -1,15 +1,17 @@
-$font-primary: "Lato", sans-serif;
-$font-secondary: "Montserrat", sans-serif;
+$font-primary: "Questrial", sans-serif;
+$font-secondary: "Questrial", sans-serif;
 $font-logo: "Pacifico", cursive;
 
 // Colors
-$color-text: #000;
+$color-text: #161c20;
 $color-text-light: #FFFFFF;
 $color-gray: #f0f0f0;
 $color-emphasis: #674E7A; //purple 
 $color-emphasis-alt: #97B435; //green
 $color-bg-light: #FFFFFF; //white
 $color-bg-dark: #161c20; //almost black
+$color-medium-gray: #dbdbdb;
+$color-dark-gray: #656565;
 
 // Media breakpoints, taken from https://medium.com/developing-with-sass/refactoring-my-simple-sass-breakpoint-mixin-71205dd6badd
 $xs: ( max:  767px );

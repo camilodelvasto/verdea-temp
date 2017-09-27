@@ -44,3 +44,14 @@
     display: none !important;
   }
 }
+
+.modal {
+  z-index: 12000 !important;
+
+  .modal-background:hover {
+    cursor: pointer;
+  }
+  .modal-content {
+    margin: 0;
+  }
+}
