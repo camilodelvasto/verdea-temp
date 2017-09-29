@@ -241,11 +241,6 @@ export default {
 
   .cart-icon {
     margin-left: 10px;
-    display: inline-block;
-    
-    svg {
-      margin-top: 5px;
-    }
   }
 }
 

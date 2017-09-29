@@ -58,7 +58,10 @@ module.exports = {
   /*
   ** Build configuration
   */
-  plugins: ['~/plugins/buefy.js'],
+  plugins: [
+    { src: '~/plugins/buefy.js' },
+    { src: '~plugins/persistedstate.js', ssr: false }
+  ],
   css: ['~/assets/main.scss'],
   modules: [
     ['@nuxtjs/google-analytics', { ua: 'UA-15029066-25' }],

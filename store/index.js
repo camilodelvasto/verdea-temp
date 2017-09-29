@@ -2,14 +2,18 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 
 const createStore = () => {
-  return new Vuex.Store({
-    state: {
+  function initialState () {
+    return {
       cart: {
         total: 0,
         qty: 0,
         products: {}
       }
-    },
+    }
+  }
+
+  return new Vuex.Store({
+    state: initialState(),
     mutations: {
       addToCart (state, item) {
         let products = state.cart.products
@@ -57,6 +61,10 @@ const createStore = () => {
           updateItemsInCart(state)
         }
       },
+      emptyCart (state) {
+        state.cart.products = {}
+        updateItemsInCart(state)
+      },
       setNumberOfItems (state, payload) {
         let products = state.cart.products
         products[payload.productId].qty = payload.amount
@@ -66,6 +74,7 @@ const createStore = () => {
   })
 
   function updateItemsInCart (state) {
+    console.log('updating items:', state)
     var obj = state.cart.products
     var priceTotal = 0
     var qtyTotal = 0

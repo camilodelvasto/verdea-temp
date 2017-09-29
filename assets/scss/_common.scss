@@ -45,6 +45,13 @@
   }
 }
 
+.cart-icon.button {
+  display: inline-block;
+  
+  svg {
+  }
+}
+
 .readonly {
   background-color: $color-medium-gray !important;
 

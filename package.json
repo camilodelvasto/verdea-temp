@@ -18,7 +18,8 @@
     "@nuxtjs/google-analytics": "^1.0.0",
     "buefy": "^0.5.1",
     "contentful": "^4.6.1",
-    "nuxt": "^1.0.0-rc8"
+    "nuxt": "^1.0.0-rc8",
+    "vuex-persistedstate": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

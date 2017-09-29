@@ -29,6 +29,10 @@ body {
     font-family: $font-secondary;
     color: $color-emphasis;
     text-decoration: uppercase;
+
+    a {
+      color: $color-emphasis-alt;
+    }
   }
 
   h1,
