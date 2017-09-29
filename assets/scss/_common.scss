@@ -45,13 +45,55 @@
   }
 }
 
-.modal {
-  z-index: 12000 !important;
+.readonly {
+  background-color: $color-medium-gray !important;
 
-  .modal-background:hover {
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.notice {
+  font-size: 10px;
+  line-height: 1.1;
+  display: block;
+  margin-top: 10px;
+}
+
+.modal {
+  z-index: -12000 !important;
+  display: flex !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  .modal-background:hover :not(.white-bg) {
     cursor: pointer;
   }
+  .modal-background.white-bg {
+    background: rgba(white, 1);
+  }
+
   .modal-content {
-    margin: 0;
+    &.modal-picture {
+      margin: 0;
+    }
+
+    .intro {
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+  }
+
+  .modal-close {
+    &.dark-bg {
+      background: $color-medium-gray;
+    }
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 12000 !important;
   }
 }

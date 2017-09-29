@@ -4,12 +4,69 @@
       v-bind:class="{ 'is-active': showingModal }"
     >
       <div class="modal-background" v-on:click="closeModalImage()"></div>
-      <div class="modal-content">
+      <div class="modal-content modal-picture">
         <p class="image">
           <img v-bind:src="img">
         </p>
       </div>
       <button class="modal-close is-large" aria-label="close" v-on:click="closeModalImage()"></button>
+    </div>
+    <div class="modal"
+      v-bind:class="{ 'is-active': showingCheckoutForm }"
+    >
+      <div class="modal-background white-bg"></div>
+      <div class="modal-content">
+        <h3>Datos personales</h3>
+        <p class="intro">Por favor introduzca sus datos personales. Luego será redirigido a la plataforma de pagos para completar el pedido.</p>
+        <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
+          <input name="cartTotal" type="hidden" :value="cartTotal" />
+          <input name="itemsInCart" type="hidden" :value="itemsInCart" />
+          <input name="cartProducts" type="hidden" :value="cartProducts" />
+          <input name="shippingCountry" type="hidden" value="COL" />
+
+          <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+              <input class="input" type="text" name="buyerFullName" placeholder="Nombre completo" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="email" name="payerEmail" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Dirección completa</label>
+            <div class="control">
+              <input class="input" type="text" name="shippingAddress" placeholder="Dirección" required>
+            </div>
+            <p class="help">Por favor incluya apartamento/interior</p>
+          </div>
+          <div class="field">
+            <label class="label">Teléfono</label>
+            <div class="control">
+              <input class="input" type="text" name="telephone" placeholder="" required>
+            </div>
+            <p class="help">Por favor incluya apartamento/interior</p>
+          </div>
+          <div class="field">
+            <label class="label">Ciudad</label>
+            <div class="control">
+              <input class="input readonly" type="text" name="shippingCity" placeholder="Bogotá" value="Bogota" readonly>
+            </div>
+            <p class="help">Por ahora sólo hacemos envíos en Bogotá</p>
+          </div>
+
+          <button class="button is-warning" type="submit">Procesar pedido</button>
+        </form>
+        <span class="notice">
+          *Costo de envío para Bogotá: $6.000.<br>
+          Envíos gratis en Bogotá por pedidos mayores a $60.000.
+        </span>
+
+      </div>
+      <button class="modal-close is-large dark-bg" aria-label="close" v-on:click="closeCheckoutForm()"></button>
     </div>
     <div class="page-wrapper">
       <Navigation />
@@ -74,12 +131,7 @@
               <h3>Resumen</h3>
               <p>Número de ítems: <span>{{ itemsInCart }}</span></p>
               <p>Total: <span class="total-red">{{ cartTotal | currency }}</span></p>
-              <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
-                <button class="button is-warning" type="submit">Procesar pedido</button>
-                <input name="cartTotal" type="hidden" :value="cartTotal" />
-                <input name="itemsInCart" type="hidden" :value="itemsInCart" />
-                <input name="cartProducts" type="hidden" :value="cartProducts" />
-              </form>
+              <button class="button is-warning" v-on:click="openCheckoutForm()">Procesar pedido</button>
               <span class="notice">
                 *Costo de envío para Bogotá: $6.000.<br>
                 Envíos gratis en Bogotá por pedidos mayores a $60.000.
@@ -109,6 +161,7 @@ export default {
   data () {
     return {
       showingModal: false,
+      showingCheckoutForm: false,
       img: ''
     }
   },
@@ -141,6 +194,16 @@ export default {
       var vm = this
       document.body.classList.add('modal-open')
       vm.showingModal = true
+    },
+    closeCheckoutForm () {
+      var vm = this
+      document.body.classList.remove('modal-open')
+      vm.showingCheckoutForm = false
+    },
+    openCheckoutForm () {
+      var vm = this
+      document.body.classList.add('modal-open')
+      vm.showingCheckoutForm = true
     }
   },
   filters: {
@@ -269,19 +332,8 @@ export default {
         }
       }
 
-      .notice {
-        font-size: 10px;
-        line-height: 1.1;
-        display: block;
-        margin-top: 10px;
-      }
-
       span {
         font-weight: bold;
-
-        @include breakpoint($bulma) {
-          float: right;
-        }
 
         &.total-red {
           color: red;
