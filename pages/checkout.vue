@@ -130,7 +130,15 @@
             <div class="summary-box">
               <h3>Resumen</h3>
               <p>Número de ítems: <span>{{ itemsInCart }}</span></p>
-              <p>Total: <span class="total-red">{{ cartTotal | currency }}</span></p>
+              <p>Subtotal: <span class="">{{ cartTotal | currency }}</span></p>
+              <div v-if="cartTotal < 60000">
+                <p>Envío: <span class="">{{ 6000 | currency }}</span></p>
+                <p>Total: <span class="total-red">{{ cartTotal + 6000 | currency }}</span></p>
+              </div>
+              <div v-else>
+                <p>Envío: <span class="">{{ 0 | currency }}</span></p>
+                <p>Total: <span class="total-red">{{ cartTotal | currency }}</span></p>
+              </div>
               <button class="button is-warning" v-on:click="openCheckoutForm()">Procesar pedido</button>
               <span class="notice">
                 *Costo de envío para Bogotá: $6.000.<br>
@@ -315,11 +323,13 @@ export default {
       border: 1px solid $color-gray;
       border-radius: 5px;
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
 
       @include breakpoint($bulma) {
         position: fixed;
         margin-top: 40px;
-      }
+      }      
 
       p {
         display: flex;
@@ -328,7 +338,9 @@ export default {
         margin-bottom: 5px;
 
         @include breakpoint($bulma) {
-          display: block;
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
         }
       }
 
