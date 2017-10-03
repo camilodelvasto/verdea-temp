@@ -42,18 +42,27 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <span>{{ product.fields.name }}: {{ product.fields.price | currency }}</span>
-                  <button class="button is-success"
-                          @click="$store.commit('addToCart', product)"
-                          v-if="!isInCart(product.sys.id)"
-                  >Añadir</button>
-                  <button class="button is-warning"
-                          @click="$store.commit('removeFromCart', product)"
-                          v-else
-                  >Eliminar</button>
-                  <nuxt-link class="cart-icon button" to="/checkout" v-if="isInCart(product.sys.id)">
-                    <CartIcon/>
-                  </nuxt-link>
+                  <h3>{{ product.fields.name }}</h3>
+                  <div class="content-flex">
+                    <div class="card-price">
+                      {{ product.fields.price | currency }}
+                    </div>
+                    <div class="card-cart">
+                      <button class="button add-to-cart"
+                              @click="$store.commit('addToCart', product)"
+                              v-if="!isInCart(product.sys.id)"
+                      >
+                        <div class="buy-now">Comprar</div>
+                        <CartIcon/>
+                      </button>
+                      <nuxt-link to="/checkout" class="button add-to-cart go-to-checkout is-active"
+                              v-else
+                      >
+                        <div class="buy-now">Ir a pagar</div>
+                        <CartIcon/>
+                      </nuxt-link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,16 +174,31 @@ export default {
   }
 
   .card-content {
-    background: rgba(white, 0.1);
-    color: white;
-    position: absolute;
+    color: $color-text;
     bottom: 0;
     width: 100%;
-    color: white;
+    padding: 13px 0;
 
-    span {
-      display: block;
-      margin-bottom: 10px;
+    h3 {
+      color: $color-text;
+      font-weight: normal;
+    }
+
+    .content-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-price {
+      color: $color-dark-gray;
+      font-style: italic;
+    }
+
+    .card-cart {
+      display: flex;
+      flex-direction: column;
     }
 
     button {
@@ -187,7 +211,7 @@ export default {
       font-family: $font-primary;
       position: static;
       font-size: 20px;
-      line-height: 1;
+      line-height: 1.2;
       text-align: right;
       color: $color-emphasis;
       background-color: white;
@@ -239,8 +263,25 @@ export default {
     width: 55%;
   }
 
-  .cart-icon {
-    margin-left: 10px;
+  .add-to-cart {
+    display: flex;
+    align-items: center;
+
+    .buy-now {
+      align-self: flex-start;
+      margin-right: 10px;
+    }
+
+    &.go-to-checkout {
+      display: flex;
+      align-items: end;
+      background: $color-emphasis;
+      color: white;
+    }
+  }
+
+  .remove-from-cart {
+    background: $color-emphasis;
   }
 }
 

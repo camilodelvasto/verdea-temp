@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Dirección completa</label>
+            <label class="label">Dirección de envío</label>
             <div class="control">
               <input class="input" type="text" name="shippingAddress" placeholder="Dirección" required>
             </div>
@@ -100,14 +100,14 @@
                   <div class="item-qty">
                     <button class="button button-minus" v-on:click="$store.commit('minusOne', product.id)"
                             :disabled="product.qty <= 1">
-                      <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                      <svg style="width:12px;height:12px" viewBox="0 0 24 24">
                         <path d="M19,13H5V11H19V13Z" />
                       </svg>
                     </button>
                     <span>{{ product.qty}}</span>
                     <button class="button button-plus" v-on:click="$store.commit('plusOne', product.id)"
                             :disabled="product.qty >= 10">
-                      <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                      <svg style="width:12px;height:12px" viewBox="0 0 24 24">
                         <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                       </svg>
                     </button>
@@ -247,7 +247,7 @@ export default {
     span {
       align-self: center;
       flex: 1;
-      width: 50px;
+      width: 40px;
       font-size: 16px;
       height: 100%;
       border-top: 1px solid $color-medium-gray;
@@ -255,6 +255,10 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include breakpoint($bulma) {
+        width: 50px;
+      }
     }
 
     .button {
