@@ -74,7 +74,6 @@ const createStore = () => {
   })
 
   function updateItemsInCart (state) {
-    console.log('updating items:', state)
     var obj = state.cart.products
     var priceTotal = 0
     var qtyTotal = 0
