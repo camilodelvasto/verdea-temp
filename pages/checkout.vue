@@ -203,10 +203,12 @@ export default {
     closeModalImage () {
       var vm = this
       vm.showingModal = false
+      document.body.classList.remove('modal-open')
     },
     openModalImage () {
       var vm = this
       vm.showingModal = true
+      document.body.classList.add('modal-open')
     },
     closeCheckoutForm () {
       var vm = this
