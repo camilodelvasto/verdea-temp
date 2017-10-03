@@ -176,7 +176,8 @@ export default {
     return {
       showingModal: false,
       showingCheckoutForm: false,
-      product: {}
+      product: {},
+      scrollTop: 0
     }
   },
   computed: {
@@ -197,18 +198,21 @@ export default {
     openModal (product) {
       var vm = this
       vm.product = product
+      vm.scrollTop = document.body.scrollTop
       vm.openModalImage()
-      console.log(product)
     },
     closeModalImage () {
       var vm = this
       vm.showingModal = false
       document.body.classList.remove('modal-open')
+      document.body.scrollTop = vm.scrollTop
     },
     openModalImage () {
       var vm = this
       vm.showingModal = true
-      document.body.classList.add('modal-open')
+      setTimeout(function () {
+        document.body.classList.add('modal-open')
+      }, 300)
     },
     closeCheckoutForm () {
       var vm = this

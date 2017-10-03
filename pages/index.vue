@@ -141,7 +141,6 @@ export default {
       vm.product = product
       vm.scrollTop = document.body.scrollTop
       vm.openModalImage()
-      console.log('setting scrollTop')
     },
     closeModalImage () {
       var vm = this
