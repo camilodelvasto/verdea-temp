@@ -4,10 +4,14 @@
       v-bind:class="{ 'is-active': showingModal }"
     >
       <div class="modal-background" v-on:click="closeModalImage()"></div>
-      <div class="modal-content modal-picture">
-        <p class="image">
-          <img v-bind:src="img">
-        </p>
+      <div class="modal-content" v-if="product.fields !== undefined">
+        <div class="image">
+          <img v-bind:src="product.fields.picture.fields.file.url">
+        </div>
+        <div class="contents">
+          <h3>{{ product.fields.name }}</h3>
+          <p>{{ product.fields.description }}</p>
+        </div>
       </div>
       <button class="modal-close is-large" aria-label="close" v-on:click="closeModalImage()"></button>
     </div>
@@ -15,7 +19,7 @@
       v-bind:class="{ 'is-active': showingCheckoutForm }"
     >
       <div class="modal-background white-bg"></div>
-      <div class="modal-content">
+      <div class="modal-content checkout-form">
         <h3>Datos personales</h3>
         <p class="intro">Por favor introduzca sus datos personales. Luego será redirigido a la plataforma de pagos para completar el pedido.</p>
         <form method="post" action="https://wt-9c78551d704acfbbfbeb0bb6cca86e9a-0.run.webtask.io/verdea-place-order">
@@ -85,7 +89,7 @@
               <div class="table columns gapless is-mobile table-body" v-for="product in $store.state.cart.products" track-by="$index">
                 <div class="column hide-mobile">
                   <figure class="item-image">
-                    <a v-on:click="openModal(product.fields.picture.fields.file.url)">
+                    <a v-on:click="openModal(product)">
                       <img v-bind:src="product.fields.picture.fields.file.url" >
                     </a>
                   </figure>
@@ -94,7 +98,7 @@
                   {{ product.fields.name }}
                 </div>
                 <div class="column hide-desktop">
-                  <a v-on:click="openModal(product.fields.picture.fields.file.url)">{{ product.fields.name }}</a>
+                  <a v-on:click="openModal(product)">{{ product.fields.name }}</a>
                 </div>
                 <div class="column c-qty">
                   <div class="item-qty">
@@ -161,16 +165,18 @@
 
 <script>
 import Navigation from '~/components/Navigation.vue'
+import CartIcon from '~/components/CartIcon.vue'
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    CartIcon
   },
   data () {
     return {
       showingModal: false,
       showingCheckoutForm: false,
-      img: ''
+      product: {}
     }
   },
   computed: {
@@ -188,19 +194,18 @@ export default {
     isInCart (productId) {
       return this.$store.state.cart.products[productId] !== undefined
     },
-    openModal (img) {
+    openModal (product) {
       var vm = this
-      vm.img = img
+      vm.product = product
       vm.openModalImage()
+      console.log(product)
     },
     closeModalImage () {
       var vm = this
-      document.body.classList.remove('modal-open')
       vm.showingModal = false
     },
     openModalImage () {
       var vm = this
-      document.body.classList.add('modal-open')
       vm.showingModal = true
     },
     closeCheckoutForm () {

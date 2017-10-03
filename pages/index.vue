@@ -313,27 +313,4 @@ button {
     min-height: 100%;
     align-items: stretch;
 }
-
-.modal-content {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-
-  @include breakpoint($bulma) {
-    flex-direction: row;
-  }
-
-  .contents {
-    h3 {
-      color: $color-text;
-    }
-
-    margin: 15px;
-    color: $color-text;
-
-    @include breakpoint($bulma) {
-      width: 100%;
-    }
-  }  
-}
 </style>

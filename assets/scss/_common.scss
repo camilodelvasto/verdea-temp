@@ -108,6 +108,30 @@
   }
 }
 
+.modal-content:not(.checkout-form) {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bulma) {
+    flex-direction: row;
+  }
+
+  .contents {
+    h3 {
+      color: $color-text;
+    }
+
+    margin: 15px;
+    color: $color-text;
+
+    @include breakpoint($bulma) {
+      width: 100%;
+    }
+  }  
+}
+
+
 .button {
   border-radius: 0 !important;
 }
