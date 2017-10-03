@@ -113,7 +113,8 @@ export default {
   data () {
     return {
       showingModal: false,
-      product: {}
+      product: {},
+      scrollTop: 0
     }
   },
   asyncData ({env}) {
@@ -138,17 +139,22 @@ export default {
     openModal (product) {
       var vm = this
       vm.product = product
+      vm.scrollTop = document.body.scrollTop
       vm.openModalImage()
+      console.log('setting scrollTop')
     },
     closeModalImage () {
       var vm = this
       vm.showingModal = false
       document.body.classList.remove('modal-open')
+      document.body.scrollTop = vm.scrollTop
     },
     openModalImage () {
       var vm = this
       vm.showingModal = true
-      document.body.classList.add('modal-open')
+      setTimeout(function () {
+        document.body.classList.add('modal-open')
+      }, 300)
     }
   },
   filters: {
