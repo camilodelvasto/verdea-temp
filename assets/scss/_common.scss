@@ -77,6 +77,11 @@
   .modal-background:hover :not(.white-bg) {
     cursor: pointer;
   }
+
+  .modal-background {
+    background: rgba(white, 0.98);
+  }
+
   .modal-background.white-bg {
     background: rgba(white, 1);
   }
@@ -93,9 +98,7 @@
   }
 
   .modal-close {
-    &.dark-bg {
-      background: $color-medium-gray;
-    }
+    background: $color-medium-gray;
   }
 
   &.is-active {

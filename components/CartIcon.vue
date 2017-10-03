@@ -12,7 +12,7 @@ svg {
     fill: $color-emphasis;
   }
 }
-.is-active {
+.is-active-icon {
   svg {
     path {
       fill: white;

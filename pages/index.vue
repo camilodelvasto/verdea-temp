@@ -4,10 +4,34 @@
       v-bind:class="{ 'is-active': showingModal }"
     >
       <div class="modal-background" v-on:click="closeModalImage()"></div>
-      <div class="modal-content">
-        <p class="image">
-          <img v-bind:src="img">
-        </p>
+      <div class="modal-content" v-if="product.fields !== undefined">
+        <div class="image">
+          <img v-bind:src="product.fields.picture.fields.file.url">
+        </div>
+        <div class="contents">
+          <h3>{{ product.fields.name }}</h3>
+          <p>{{ product.fields.description }}</p>
+          <div class="content-flex">
+            <div class="card-price">
+              {{ product.fields.price | currency }}
+            </div>
+            <div class="card-cart">
+              <button class="button add-to-cart"
+                      @click="$store.commit('addToCart', product)"
+                      v-if="!isInCart(product.sys.id)"
+              >
+                <div class="buy-now">Comprar</div>
+                <CartIcon/>
+              </button>
+              <nuxt-link to="/checkout" class="button add-to-cart go-to-checkout is-active-icon"
+                      v-else
+              >
+                <div class="buy-now">Ir a pagar</div>
+                <CartIcon/>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
       </div>
       <button class="modal-close is-large" aria-label="close" v-on:click="closeModalImage()"></button>
     </div>
@@ -34,7 +58,7 @@
           <div class="card column is-half-tablet" v-for="product in products">
             <div class="card-image">
               <figure class="image">
-                <a v-on:click="openModal(product.fields.picture.fields.file.url)">
+                <a v-on:click="openModal(product)">
                   <img v-bind:src="product.fields.picture.fields.file.url" >
                 </a>
               </figure>
@@ -55,7 +79,7 @@
                         <div class="buy-now">Comprar</div>
                         <CartIcon/>
                       </button>
-                      <nuxt-link to="/checkout" class="button add-to-cart go-to-checkout is-active"
+                      <nuxt-link to="/checkout" class="button add-to-cart go-to-checkout is-active-icon"
                               v-else
                       >
                         <div class="buy-now">Ir a pagar</div>
@@ -89,7 +113,7 @@ export default {
   data () {
     return {
       showingModal: false,
-      img: ''
+      product: {}
     }
   },
   asyncData ({env}) {
@@ -111,19 +135,17 @@ export default {
     isInCart (productId) {
       return this.$store.state.cart.products[productId] !== undefined
     },
-    openModal (img) {
+    openModal (product) {
       var vm = this
-      vm.img = img
+      vm.product = product
       vm.openModalImage()
     },
     closeModalImage () {
       var vm = this
-      document.body.classList.remove('modal-open')
       vm.showingModal = false
     },
     openModalImage () {
       var vm = this
-      document.body.classList.add('modal-open')
       vm.showingModal = true
     }
   },
@@ -183,27 +205,6 @@ export default {
       color: $color-text;
       font-weight: normal;
     }
-
-    .content-flex {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .card-price {
-      color: $color-dark-gray;
-      font-style: italic;
-    }
-
-    .card-cart {
-      display: flex;
-      flex-direction: column;
-    }
-
-    button {
-      font-family: $font-primary;
-    }
   }
 
   &.special {
@@ -217,6 +218,27 @@ export default {
       background-color: white;
     }
   }
+}
+
+.content-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-price {
+  color: $color-dark-gray;
+  font-style: italic;
+}
+
+.card-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: $font-primary;
 }
 
 .canvas-left {
@@ -262,27 +284,27 @@ export default {
     margin-top: 60px;
     width: 55%;
   }
+}
 
-  .add-to-cart {
+.add-to-cart {
+  display: flex;
+  align-items: center;
+
+  .buy-now {
+    align-self: flex-start;
+    margin-right: 10px;
+  }
+
+  &.go-to-checkout {
     display: flex;
-    align-items: center;
-
-    .buy-now {
-      align-self: flex-start;
-      margin-right: 10px;
-    }
-
-    &.go-to-checkout {
-      display: flex;
-      align-items: end;
-      background: $color-emphasis;
-      color: white;
-    }
-  }
-
-  .remove-from-cart {
+    align-items: end;
     background: $color-emphasis;
+    color: white;
   }
+}
+
+.remove-from-cart {
+  background: $color-emphasis;
 }
 
 .flexcontainer {
@@ -290,5 +312,28 @@ export default {
     flex-direction: row;
     min-height: 100%;
     align-items: stretch;
+}
+
+.modal-content {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bulma) {
+    flex-direction: row;
+  }
+
+  .contents {
+    h3 {
+      color: $color-text;
+    }
+
+    margin: 15px;
+    color: $color-text;
+
+    @include breakpoint($bulma) {
+      width: 100%;
+    }
+  }  
 }
 </style>
