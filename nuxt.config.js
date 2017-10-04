@@ -28,11 +28,11 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: 'aSiktNyou87KF2WS9VKomNYKwPCeKhuUvnJs26P9bZc' },
-      { hid: 'description', name: 'description', content: 'Flores de amor con coco' },
-      { hid: 'og:title', property: 'og:title', content: 'Flores de amor con coco' },
+      { hid: 'description', name: 'description', content: 'El encuentro de la naturaleza y el arte' },
+      { hid: 'og:title', property: 'og:title', content: 'El encuentro de la naturaleza y el arte' },
       { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/startics/image/upload/v1507093583/favicon_vpshut.png' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'verdea' },
-      { hid: 'og:description', property: 'og:description', content: 'verdea: flores de amor con coco' },
+      { hid: 'og:description', property: 'og:description', content: 'El encuentro de la naturaleza y el arte' },
     ],
     script: [
       { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "verdea", "url" : "https://verdea.online/", "logo" : "https://res.cloudinary.com/startics/image/upload/v1507093583/favicon_vpshut.png", "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+573192419869", "contactType" : "sales" }], "sameAs" : [ "https://facebook.com/verdeacolombia/" ] }', type: 'application/ld+json' }
