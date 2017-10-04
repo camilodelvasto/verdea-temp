@@ -123,7 +123,7 @@ export default {
       // fetch all blog products sorted by creation date
       client.getEntries({
         'content_type': env.CTF_PRODUCT_ID,
-        order: '-sys.createdAt'
+        order: '-fields.order'
       })
     ]).then(([products]) => {
       // return data that should be available
