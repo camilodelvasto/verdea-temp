@@ -31,6 +31,7 @@
               </nuxt-link>
             </div>
           </div>
+          <p class="notice-alt">*La planta se entrega con plato y una bolsa.</p>
         </div>
       </div>
       <button class="modal-close is-large" aria-label="close" v-on:click="closeModalImage()"></button>
