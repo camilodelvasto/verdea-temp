@@ -181,6 +181,10 @@ export default {
       scrollTop: 0
     }
   },
+  mounted () {
+    var vm = this
+    vm.closeModalImage()
+  },
   computed: {
     itemsInCart () {
       return this.$store.state.cart.qty
