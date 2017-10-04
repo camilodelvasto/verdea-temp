@@ -28,13 +28,13 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: 'aSiktNyou87KF2WS9VKomNYKwPCeKhuUvnJs26P9bZc' },
-      { hid: 'description', name: 'description', content: 'El encuentro de la naturaleza y el arte' },
+      { hid: 'description', name: 'description', content: 'El encuentro de la naturaleza y el arte. Materas orgánicas hechas con amor para plantas únicas.' },
       { hid: 'og:url', property: 'og:url', content: 'https://verdea.online/' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:title', property: 'og:title', content: 'Verdea: regala vida' },
       { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/startics/image/upload/v1507093583/favicon_vpshut.png' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'verdea' },
-      { hid: 'og:description', property: 'og:description', content: 'El encuentro de la naturaleza y el arte' },
+      { hid: 'og:description', property: 'og:description', content: 'El encuentro de la naturaleza y el arte. Materas orgánicas hechas con amor para plantas únicas.' },
     ],
     script: [
       { innerHTML: '{ "@context" : "http://schema.org", "@type" : "Organization", "legalName" : "verdea", "url" : "https://verdea.online/", "logo" : "https://res.cloudinary.com/startics/image/upload/v1507093583/favicon_vpshut.png", "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+573192419869", "contactType" : "sales" }], "sameAs" : [ "https://facebook.com/verdeacolombia/" ] }', type: 'application/ld+json' }
