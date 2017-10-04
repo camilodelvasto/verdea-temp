@@ -158,7 +158,7 @@ export default {
   },
   filters: {
     currency: function (value) {
-      return '$' + value.toLocaleString('es-CO')
+      if (value !== undefined) return '$' + value.toLocaleString('es-CO')
     }
   }
 }
