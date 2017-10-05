@@ -12,14 +12,20 @@ svg {
     fill: $color-emphasis;
   }
 }
+.navbar-menu.is-active,
 .is-active-icon {
   svg {
     path {
       fill: white;
     }
   }
-}
 
+  svg:hover {
+    path {
+      fill: $color-text;
+    }
+  }
+}
 </style>
 
 <script>

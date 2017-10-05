@@ -52,6 +52,11 @@
                     Verdea: el encuentro de la naturaleza y el arte. Materas orgánicas hechas con amor para plantas únicas.
                   </div>
                 </div>
+                <div class="hide-desktop chevron-down bounce-always">
+                  <svg style="width:38px;height:38px" viewBox="0 0 24 24">
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                  </svg>
+                </div>
               </div> <!-- card -->
             </div>
         </div>
@@ -320,5 +325,16 @@ button {
     flex-direction: row;
     min-height: 100%;
     align-items: stretch;
+}
+
+.chevron-down {
+  display: block;
+  text-align: center;
+
+  svg {
+    path {
+      fill: $color-emphasis;
+    }
+  }
 }
 </style>

@@ -99,7 +99,7 @@
                   {{ product.fields.name }}
                 </div>
                 <div class="column hide-desktop">
-                  <a v-on:click="openModal(product)">{{ product.fields.name }}</a>
+                  <a v-on:click="openModal(product)">{{ product.fields.name }} <br><span class="notice">(Ver producto)</span></a>
                 </div>
                 <div class="column c-qty">
                   <div class="item-qty">

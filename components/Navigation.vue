@@ -13,6 +13,11 @@
           <LogoAlt />
         </div>
 
+        <nuxt-link to="/checkout" class="navbar-item show-mobile-and-desktop cart burger-cart hide-desktop" v-if="itemsInCart !== 0">
+          <CartIcon/>
+        </nuxt-link>
+
+
         <div id="#nav-burger-trigger" class="navbar-burger"
           v-bind:class="{ 'is-active': showMobileMenu }"
           v-on:click="toggleMobileMenu()"
@@ -128,6 +133,19 @@
 
 .navbar-container {
   display: flex;
+  justify-content: space-between;
+}
+
+.burger-cart {
+  align-self: flex-end;
+  margin-right: 25px;
+  margin-bottom: 3px;
+}
+
+.expanded {
+  .burger-cart {
+    display: none;
+  }
 }
 
 .nav-container {
