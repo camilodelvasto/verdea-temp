@@ -249,10 +249,6 @@ export default {
   flex-direction: column;
 }
 
-button {
-  font-family: $font-primary;
-}
-
 .canvas-left {
   order: -1;
 
@@ -301,7 +297,11 @@ button {
 .add-to-cart {
   display: flex;
   align-items: center;
-  transition: all 2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: $color-gray;
+  }
 
   .buy-now {
     align-self: flex-start;
@@ -313,6 +313,10 @@ button {
     align-items: end;
     background: $color-emphasis;
     color: white;
+
+    &:hover {
+      background: $color-emphasis-alt;
+    }
   }
 }
 

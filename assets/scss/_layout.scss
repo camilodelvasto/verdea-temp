@@ -28,3 +28,16 @@ html {
     text-align: left;
   }
 }
+
+.center-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pad-me-top {
+  @include breakpoint($bulma) {
+    margin-top: 40px;
+  }
+}

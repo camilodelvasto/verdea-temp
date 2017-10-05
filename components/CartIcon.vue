@@ -20,6 +20,9 @@ svg {
     }
   }
 
+}
+
+.navbar-menu.is-active {
   svg:hover {
     path {
       fill: $color-text;

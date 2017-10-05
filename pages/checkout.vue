@@ -155,9 +155,10 @@
       </section>
 
       <section class="section" v-else>
-        <div class="container">
+        <div class="container center-me pad-me-top">
           <h2>No hay productos en el carrito de compras</h2>
           <p>Regresa al <nuxt-link to="/">inicio</nuxt-link> para ver los productos disponibles.</p>
+          <nuxt-link to="/" class="button is-warning">Empezar a comprar</nuxt-link>
         </div>
       </section>
     </div>
