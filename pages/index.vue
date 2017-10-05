@@ -63,10 +63,9 @@
         <div class="flexitem canvas-feed columns is-multiline">
           <div class="card column is-half-tablet" v-for="product in products">
             <div class="card-image">
-              <figure class="image">
-                <a v-on:click="openModal(product)">
+              <figure class="image image-requires-feedback">
+                <div class="mask" v-on:click="openModal(product)"></div>
                   <img v-bind:src="product.fields.picture.fields.file.url" >
-                </a>
               </figure>
             </div>
             <div class="card-content">
@@ -173,7 +172,7 @@ export default {
 <style scoped lang="scss">
 .feed-wrapper {
   background-size: cover;
-
+  padding-bottom: 40px;
 }
 .column {
   padding: 0;
@@ -302,6 +301,7 @@ button {
 .add-to-cart {
   display: flex;
   align-items: center;
+  transition: all 2s ease-in-out;
 
   .buy-now {
     align-self: flex-start;
@@ -313,6 +313,30 @@ button {
     align-items: end;
     background: $color-emphasis;
     color: white;
+  }
+}
+
+.image-requires-feedback {
+  position: relative;
+
+  .mask {
+    position: absolute;
+    z-index: 120;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .mask {
+      opacity: 0.2;
+    }
   }
 }
 
