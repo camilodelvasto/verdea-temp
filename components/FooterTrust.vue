@@ -3,6 +3,7 @@
     <div class="hero-body">
       <div class="container">
         <span class="text">
+          Materas orgánicas hechas con amor para plantas únicas<br>
           ®2017 - verdea.online<br>
           Transacción segura con PayU LATAM<br>
           <img src="https://res.cloudinary.com/startics/image/upload/c_scale,w_100/v1505625466/imageedit_8_6347016394_ihvqol.png">
